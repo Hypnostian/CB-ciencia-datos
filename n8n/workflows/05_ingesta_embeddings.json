@@ -1,0 +1,399 @@
+{
+  "name": "05 Ingesta embeddings",
+  "id": "cbdatos05ingest",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 05 Ingesta de embeddings (RAG)\nRama A (n8n Cloud): lista de documentos con URL de texto -> descarga.\nRama B (n8n local/self-hosted): lee data/oficial/docs/*.txt montado en /data/oficial/docs.\nAmbas: fragmentar por párrafos (hasta 3200 caracteres con solape de 480, que equivalen a unos 800 y 120 tokens a ~4 caracteres por token en español, igual que rag/ingesta.py: máximo 800 tokens y solape del 15 %) -> upsert en documentos por fuente_url (borra los fragmentos viejos del documento, así volver a ejecutar no duplica) -> embedding gemini-embedding-001 de 768 dimensiones (outputDimensionality, taskType RETRIEVAL_DOCUMENT, columna vector(768)) -> INSERT en documentos_fragmentos.\nEdite la lista en el nodo 'Documentos (URL)'. Credenciales: Gemini API, Supabase Postgres.",
+        "height": 260,
+        "width": 620,
+        "color": 4
+      },
+      "id": "61bf1f7b-c4d2-425c-770a-8168a75d7146",
+      "name": "Nota 0",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        -300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ca83ba52-9402-26d7-5ca4-739bf8d84315",
+      "name": "Ejecutar manualmente",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// EDITE esta lista: cada documento debe ser un texto plano accesible por URL (p. ej. el .txt crudo en GitHub/Drive publico).\n// fuente_url es la URL OFICIAL del documento que se mostrara como fuente en el chatbot.\nconst docs = [\n  { titulo: 'Centro de Competencias Digitales UNAB', fuente_url: 'https://unab.edu.co/centro-de-competencias-digitales/', tipo: 'ccd', texto_url: 'https://REEMPLAZAR/ccd.txt' },\n  { titulo: 'Reglamento Estudiantil de Pregrado 2019', fuente_url: 'https://unab.edu.co/', tipo: 'reglamento', texto_url: 'https://REEMPLAZAR/reglamento.txt' },\n];\nreturn docs.map(d => ({ json: d }));"
+      },
+      "id": "8b70cfa7-3908-c3e6-a0f9-29f12f1573a8",
+      "name": "Documentos (URL)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.texto_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "texto"
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "295f0373-b2a8-c112-b46a-dc2c6658193e",
+      "name": "Descargar texto",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "const metas = $('Documentos (URL)').all();\nreturn $input.all().map((it, i) => ({ json: { titulo: metas[i].json.titulo, fuente_url: metas[i].json.fuente_url, tipo: metas[i].json.tipo, texto: String(it.json.texto || it.json.data || '') } }));"
+      },
+      "id": "a208c60c-0d6a-8ea1-8e7d-2a6a38ee03bb",
+      "name": "Unir texto y metadatos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "/data/oficial/docs/*.txt",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "id": "cd8dffef-fe5e-1725-4f73-8b1aa1caff7a",
+      "name": "Leer .txt locales",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        220,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "binaryPropertyName": "data",
+        "options": {}
+      },
+      "id": "6433dd20-700f-3e3d-779d-6d23ce5f23f2",
+      "name": "Texto del archivo",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// La URL oficial se toma de una linea 'Fuente: https://...' / 'URL: https://...' en las primeras lineas del .txt.\nconst bin = $('Leer .txt locales').all();\nreturn $input.all().map((it, i) => {\n  const texto = String(it.json.data || it.json.text || '');\n  const nombre = (bin[i] && bin[i].binary && bin[i].binary.data && bin[i].binary.data.fileName) || ('documento_' + i + '.txt');\n  const cab = texto.split('\\n').slice(0, 6).join('\\n');\n  const m = cab.match(/(?:fuente|url)\\s*:\\s*(https?:\\/\\/\\S+)/i) || cab.match(/(https?:\\/\\/\\S+)/);\n  const titulo = nombre.replace(/\\.txt$/i, '').replace(/[_-]+/g, ' ');\n  return { json: { titulo, fuente_url: m ? m[1] : 'https://unab.edu.co/#doc-' + encodeURIComponent(nombre), tipo: 'oficial', texto } };\n});"
+      },
+      "id": "14a0f124-1932-8ec7-674c-56c1f842608e",
+      "name": "Metadatos de archivo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fragmentacion por parrafos: hasta 3200 caracteres con solape de 480 (unos 800 y 120 tokens a ~4 caracteres por token en espanol),\n// igual que rag/ingesta.py (maximo 800 tokens, solape del 15 %).\nconst TAM = 3200, SOLAPE = 480;\nconst salida = [];\nfor (const it of $input.all()) {\n  const texto = String(it.json.texto || '').replace(/\\r/g, '').replace(/[ \\t]+/g, ' ').trim();\n  if (texto.length < 40) continue;\n  const parrafos = texto.split(/\\n{2,}|\\n(?=[A-ZÁÉÍÓÚ0-9#])/).map(p => p.replace(/\\n/g, ' ').trim()).filter(Boolean);\n  const chunks = []; let actual = '';\n  for (let p of parrafos) {\n    while (p.length > TAM) { // parrafos enormes: cortar en espacio\n      let corte = p.lastIndexOf(' ', TAM); if (corte < TAM / 2) corte = TAM;\n      if (actual) { chunks.push(actual); actual = ''; }\n      chunks.push(p.slice(0, corte)); p = p.slice(Math.max(0, corte - SOLAPE)).trim();\n      if (p.length <= SOLAPE) { p = ''; break; }\n    }\n    if (!p) continue;\n    if ((actual + ' ' + p).length > TAM && actual) { chunks.push(actual); actual = actual.slice(-SOLAPE) + ' ' + p; }\n    else actual = actual ? actual + ' ' + p : p;\n  }\n  if (actual.trim()) chunks.push(actual.trim());\n  salida.push({ json: { titulo: it.json.titulo, fuente_url: it.json.fuente_url, tipo: it.json.tipo, chunks } });\n}\nreturn salida;"
+      },
+      "id": "5a65d553-dfec-f823-f5d3-51a8e648a328",
+      "name": "Fragmentar",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        900,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "WITH d AS (INSERT INTO documentos (titulo, fuente_url, tipo) VALUES ($1, $2, $3) ON CONFLICT (fuente_url) DO UPDATE SET titulo = EXCLUDED.titulo, tipo = EXCLUDED.tipo RETURNING id), del AS (DELETE FROM documentos_fragmentos WHERE documento_id IN (SELECT id FROM d)) SELECT id FROM d",
+        "options": {
+          "queryReplacement": "={{ [ $json.titulo, $json.fuente_url, $json.tipo ] }}"
+        }
+      },
+      "id": "fb2a09fa-a1d8-ba24-5a92-de7b0b3a1c59",
+      "name": "Upsert documento",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1120,
+        100
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "REEMPLAZAR",
+          "name": "Supabase Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const docs = $('Fragmentar').all();\nconst ids = $input.all();\nconst out = [];\ndocs.forEach((d, i) => {\n  const documento_id = ids[i].json.id;\n  d.json.chunks.forEach((contenido, n) => out.push({ json: { documento_id, contenido, n, total: d.json.chunks.length, titulo: d.json.titulo, fuente_url: d.json.fuente_url } }));\n});\nreturn out;"
+      },
+      "id": "22eefa74-10bc-ea78-7105-8387d8fda79b",
+      "name": "Un item por fragmento",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'models/gemini-embedding-001', content: { parts: [{ text: $json.contenido }] }, taskType: 'RETRIEVAL_DOCUMENT', outputDimensionality: 768 }) }}",
+        "options": {
+          "timeout": 30000,
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 700
+            }
+          }
+        }
+      },
+      "id": "0f4a2aee-59d2-f5ec-a5cc-d5f18dbfa9db",
+      "name": "Embedding del fragmento",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1560,
+        100
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "REEMPLAZAR",
+          "name": "Gemini API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "parameters": {
+        "jsCode": "const frags = $('Un item por fragmento').all();\nreturn $input.all().map((it, i) => {\n  const v = it.json.embedding.values;\n  if (!Array.isArray(v) || v.length !== 768) throw new Error('Embedding invalido en fragmento ' + i);\n  const f = frags[i].json;\n  return { json: { documento_id: f.documento_id, contenido: f.contenido,\n    metadata: JSON.stringify({ titulo: f.titulo, fuente_url: f.fuente_url, fragmento: f.n + 1, total: f.total }),\n    embedding: '[' + v.join(',') + ']' } };\n});"
+      },
+      "id": "68f1eb9f-c46b-3fbc-7c97-ca4ba005370a",
+      "name": "Preparar insercion",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO documentos_fragmentos (documento_id, contenido, metadata, embedding) VALUES ($1, $2, $3::jsonb, $4::vector)",
+        "options": {
+          "queryReplacement": "={{ [ $json.documento_id, $json.contenido, $json.metadata, $json.embedding ] }}"
+        }
+      },
+      "id": "0221c31f-ec8e-39f8-fe64-1a773f45477f",
+      "name": "Insertar fragmento",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        2000,
+        100
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "REEMPLAZAR",
+          "name": "Supabase Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Ejecutar manualmente": {
+      "main": [
+        [
+          {
+            "node": "Documentos (URL)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Leer .txt locales",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Documentos (URL)": {
+      "main": [
+        [
+          {
+            "node": "Descargar texto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar texto": {
+      "main": [
+        [
+          {
+            "node": "Unir texto y metadatos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unir texto y metadatos": {
+      "main": [
+        [
+          {
+            "node": "Fragmentar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer .txt locales": {
+      "main": [
+        [
+          {
+            "node": "Texto del archivo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Texto del archivo": {
+      "main": [
+        [
+          {
+            "node": "Metadatos de archivo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Metadatos de archivo": {
+      "main": [
+        [
+          {
+            "node": "Fragmentar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fragmentar": {
+      "main": [
+        [
+          {
+            "node": "Upsert documento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert documento": {
+      "main": [
+        [
+          {
+            "node": "Un item por fragmento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Un item por fragmento": {
+      "main": [
+        [
+          {
+            "node": "Embedding del fragmento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embedding del fragmento": {
+      "main": [
+        [
+          {
+            "node": "Preparar insercion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar insercion": {
+      "main": [
+        [
+          {
+            "node": "Insertar fragmento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

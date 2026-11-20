@@ -1,0 +1,39 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Flujo 01: Consulta general (RAG)</title><style>
+body{margin:0;width:1956px;height:556px;background:#F7F5FB;font-family:"Segoe UI",Arial,sans-serif;position:relative;
+background-image:radial-gradient(#DCD6E8 1.2px,transparent 1.2px);background-size:22px 22px}
+.n{position:absolute;width:176px;height:70px;background:#fff;border:2px solid;border-radius:12px;box-sizing:border-box;
+padding:7px 10px 0 16px;box-shadow:0 2px 5px rgba(0,0,0,.08)}
+.n b{display:block;font-size:13.5px;line-height:1.2;color:#231B33} .n span{font-size:11px;color:#6B6680}
+.n i{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:10px 0 0 10px}
+h1{position:absolute;left:24px;top:8px;margin:0;font-size:24px;color:#3F0A75} p.s{position:absolute;left:24px;top:44px;margin:0;font-size:13.5px;color:#5B5670}
+svg{position:absolute;left:0;top:0} .lab{font-size:11px;font-weight:600}
+</style></head><body><h1>Flujo 01: Consulta general (RAG)</h1><p class="s">Embedding de la pregunta, búsqueda en pgvector (match_documentos), umbral 0.35 y agente RAG con memoria.</p>
+<svg width="1956" height="556"><defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#4A4458"/></marker></defs>
+<path d="M1368.0,396 C1368.0,356 1518.0,246 1518.0,208" stroke="#2563EB" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="1374.0" y="388" fill="#2563EB">modelo</text>
+<path d="M1568.0,396 C1568.0,356 1518.0,246 1518.0,208" stroke="#9333EA" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="1574.0" y="388" fill="#9333EA">memoria</text>
+<path d="M246,271.0 C286,271.0 270,271.0 308,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M486,271.0 C526,271.0 490,271.0 528,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M706,271.0 C746,271.0 710,271.0 748,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M926,271.0 C966,271.0 930,271.0 968,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M1146,271.0 C1186,271.0 1150,271.0 1188,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M1366,259.3333333333333 C1406,259.3333333333333 1390,171.0 1428,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<text class="lab" x="1372" y="255.33333333333331" fill="#00809F">sí</text>
+<path d="M1366,282.6666666666667 C1538.0,282.6666666666667 1538.0,311.0 1708,311.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<text class="lab" x="1372" y="278.6666666666667" fill="#00809F">no</text>
+<path d="M1606,171.0 C1658.0,171.0 1658.0,171.0 1708,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+</svg>
+<div class="n" style="left:70px;top:236px;border-color:#F79800"><i style="background:#F79800"></i><b>Entrada subflujo</b><span>Entrada de subflujo</span></div>
+<div class="n" style="left:310px;top:236px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Embedding de la pregunta</b><span>HTTP Request | reintenta x3</span></div>
+<div class="n" style="left:530px;top:236px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Vector de consulta</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:750px;top:236px;border-color:#4FA83D"><i style="background:#4FA83D"></i><b>Buscar fragmentos</b><span>Postgres (Supabase)</span></div>
+<div class="n" style="left:970px;top:236px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Armar prompt</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:1190px;top:236px;border-color:#00A3CC"><i style="background:#00A3CC"></i><b>Hay contexto</b><span>If</span></div>
+<div class="n" style="left:1430px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Agente RAG</b><span>AI Agent | reintenta x3</span></div>
+<div class="n" style="left:1280px;top:396px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Agente RAG modelo Gemini</b><span>Gemini Chat Model</span></div>
+<div class="n" style="left:1480px;top:396px;border-color:#9333EA"><i style="background:#9333EA"></i><b>Agente RAG memoria</b><span>Postgres Chat Memory</span></div>
+<div class="n" style="left:1710px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Formato de salida</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:1710px;top:276px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Sin informacion</b><span>Code (JavaScript)</span></div>
+</body></html>

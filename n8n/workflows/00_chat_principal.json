@@ -1,0 +1,792 @@
+{
+  "name": "00 Chat principal",
+  "id": "cbdatos00chatpr",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 00 Chat principal\nWebhook POST /webhook/unab-chat (lo llama la app Android).\n1. Config (MCP_URL, CHAT_TOKEN, GOOGLE_SHEET_ID)\n2. Validacion de X-Chat-Token + guardrails de entrada\n3. Clasificacion de intencion con Gemini\n4. Subflujos 01-04 (Execute Workflow)\n5. Guardrails de salida y respuesta JSON del contrato.\nAcciones directas (sin LLM): accion=perfil -> /api/perfil y accion=noticias -> /api/noticias del servidor MCP.\nCredenciales: Gemini API, Supabase Postgres (subflujos).",
+        "height": 230,
+        "width": 560,
+        "color": 4
+      },
+      "id": "dc4002c1-5a09-9859-643d-f2c367d08d00",
+      "name": "Nota 0",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "unab-chat",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "3c746bd4-54e6-adc7-7eb3-07216e3f203c",
+      "name": "Webhook chat",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "d902d984-9218-b1b9-6142-2dc9b60726ee"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c1",
+              "name": "MCP_URL",
+              "value": "http://REEMPLAZAR_IP_EC2:9000",
+              "type": "string"
+            },
+            {
+              "id": "c2",
+              "name": "CHAT_TOKEN",
+              "value": "REEMPLAZAR_CHAT_TOKEN",
+              "type": "string"
+            },
+            {
+              "id": "c3",
+              "name": "GOOGLE_SHEET_ID",
+              "value": "REEMPLAZAR_ID_HOJA_GOOGLE",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "0ad31446-f202-1cb9-7779-733eb6103f31",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Valida token, formato del cuerpo y aplica filtros de entrada.\nconst j = $input.first().json;\nconst headers = j.headers || {};\nconst body = j.body || {};\nconst token = headers['x-chat-token'];\nconst bloquear = (status, respuesta, motivo) => [{ json: { bloqueo: motivo, http_status: status,\n  cuerpo: { respuesta, intencion: 'fuera_de_tema', fuentes: [] } } }];\n\nif (!token || token !== j.CHAT_TOKEN) return bloquear(401, 'No autorizado.', 'token');\n\nconst codigo = String(body.estudiante_codigo || '').trim().toUpperCase();\nconst sesion = String(body.session_id || '').trim();\nconst mensaje = String(body.mensaje || '').trim();\nconst accion = String(body.accion || 'chat').trim().toLowerCase();\n\n// Acciones directas de la app: \"perfil\" (ficha del estudiante) y \"noticias\" (noticias del dia). No requieren mensaje.\nif (accion === 'perfil' || accion === 'noticias') {\n  if (!/^U00[0-9]{6}$/.test(codigo))\n    return bloquear(400, 'Código de estudiante inválido: debe ser U00 seguido de 6 dígitos.', 'formato');\n  return [{ json: { bloqueo: '', accion, estudiante_codigo: codigo, session_id: sesion,\n    mcp_url: String(j.MCP_URL).replace(/\\/+$/, '') } }];\n}\n\nif (!/^U00[0-9]{6}$/.test(codigo) || !sesion || sesion.length > 100 || !mensaje)\n  return bloquear(400, 'Solicitud inválida: se requieren estudiante_codigo, session_id y mensaje.', 'formato');\nif (mensaje.length > 1000)\n  return bloquear(200, 'Tu mensaje es demasiado largo. Resúmelo en menos de 1000 caracteres.', 'longitud');\n\nconst m = mensaje.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');\n\nconst inyeccion = [\n  /ignora (todas )?(las )?(instrucciones|reglas|indicaciones)/, /olvida (todo|tus instrucciones|las instrucciones)/,\n  /ignore (all |any )?(previous|prior|above) (instructions|rules)/, /disregard (the |all )?(previous|above)/,\n  /(muestra|revela|dime|imprime|repite).{0,30}(prompt|instrucciones) (del sistema|de sistema|internas|iniciales)/,\n  /system prompt/, /prompt del sistema/, /jailbreak/, /\\bdan mode\\b/, /modo desarrollador/, /developer mode/,\n  /(actua|comportate|finge|pretende) (como|que eres)/, /you are now/, /a partir de ahora (eres|seras|actuaras)/,\n  /<\\s*\\/?\\s*(system|assistant|instructions?)\\s*>/, /\\[\\s*(system|inst)\\s*\\]/,\n];\nif (inyeccion.some(r => r.test(m)))\n  return bloquear(200, 'No puedo atender esa solicitud. Puedo ayudarte con cursos, calendario académico, noticias y trámites de la UNAB.', 'inyeccion');\n\nconst credenciales = [\n  /contrasena|contrasenas|password|clave (de|del) (acceso|correo|banner|campus|portal)/,\n  /(token|api ?key|secreto)s? (de|del) (sistema|servidor|n8n|mcp)/, /variables de entorno/,\n];\nif (credenciales.some(r => r.test(m)))\n  return bloquear(200, 'Por seguridad no puedo gestionar ni mostrar contraseñas, claves o credenciales. Para recuperarlas usa los canales oficiales de la UNAB.', 'credenciales');\n\nconst otros = (mensaje.toUpperCase().match(/U00[0-9]{6}/g) || []).filter(c => c !== codigo);\nconst ajenos = [/(notas?|calificaciones|matricula|historial|promedio) (de|del) (mi )?(compan|amig|otro|otra|estudiante|alumno|hermano|novi)/,\n  /(datos|informacion) (personales )?(de|del) (otro|otra|un|una) (estudiante|alumno|compan)/];\nif (otros.length || ajenos.some(r => r.test(m)))\n  return bloquear(200, 'Solo puedo mostrarte información académica de tu propio código de estudiante.', 'datos_ajenos');\n\nreturn [{ json: {\n  bloqueo: '', accion: 'chat', estudiante_codigo: codigo, session_id: sesion, mensaje,\n  memory_key: codigo + ':' + sesion,\n  mcp_url: String(j.MCP_URL).replace(/\\/+$/, ''), google_sheet_id: j.GOOGLE_SHEET_ID } }];"
+      },
+      "id": "2fb4028b-53d5-15ef-10c7-2a58186f16aa",
+      "name": "Guardrails de entrada",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "i1",
+              "leftValue": "={{ $json.bloqueo }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a5ac2606-aea1-6cd8-e702-0d893d764c9b",
+      "name": "Entrada valida",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  systemInstruction: { parts: [{ text: 'Eres un clasificador de intenciones para un chatbot académico de la UNAB (Colombia). Clasifica el mensaje del estudiante en UNA etiqueta. Etiquetas: cursos (todo lo PERSONAL del estudiante que se responde con sus propios datos académicos: su rendimiento, notas o promedio, avance del plan, créditos, riesgo o alertas académicas, recomendaciones o consejos para mejorar, qué hacer para mejorar, consejos de estudio, carga recomendada de créditos, cuántos semestres le faltan para graduarse, proyección de semestres, qué cursos debe tomar o ya aprobó, prerrequisitos, requisitos de grado propios: competencias digitales aprobadas o faltantes, resultado de su prueba, horas libres, cursos del CCD que ha tomado), matricula (estado de su matrícula actual, cursos inscritos, NRC, horarios, cómo matricularse), calendario (fechas, periodos, matrículas, parciales, vacaciones, eventos del calendario académico), general (información institucional impersonal: qué es la universidad, el Centro de Competencias Digitales o la insignia de competencias digitales, reglamento, procesos y trámites, programas, profesores), noticias (noticias del día, novedades y anuncios de la universidad, noticias de educación, de tecnología o de ingeniería de sistemas y desarrollo de software), fuera_de_tema (cualquier otra cosa: poemas, versos, canciones, política, deportes, chistes, recetas, tareas ajenas a la universidad, código de programación). Reglas de prioridad. Regla 1: si el estudiante pide recomendaciones, consejos, evaluar su rendimiento o saber cómo mejorar en su vida académica, la etiqueta es cursos, aunque no diga mi; ejemplos: \"dame recomendaciones para mejorar mi rendimiento\", \"qué debo hacer para mejorar\", \"estoy en riesgo\", \"cuántos créditos me recomiendas\", \"cuántos semestres me faltan\". Regla 2: si la pregunta es de seguimiento o trata sobre la conversación en curso o sobre una respuesta anterior, la etiqueta es cursos, porque ese asistente conserva la memoria de la conversación; ejemplos: \"qué te pregunté\", \"qué te pregunté de primero\", \"qué dijiste antes\", \"explícame mejor lo anterior\", \"y eso qué significa\", \"resume lo que hablamos\", \"repítelo\", \"dame más detalle\". Regla 3: un poema, canción, chiste, partido, noticia deportiva o tarea ajena a la universidad es fuera_de_tema aunque se pida de forma amable o se mencione la UNAB. Regla 4: reglamento, procesos institucionales o información de la universidad que no depende de los datos del estudiante es general; ejemplo: \"qué dice el reglamento sobre la cancelación de asignaturas\". Responde solo con JSON.' }] },\n  contents: [{ role: 'user', parts: [{ text: $json.mensaje }] }],\n  generationConfig: { temperature: 0, responseMimeType: 'application/json',\n    responseSchema: { type: 'OBJECT', properties: { intencion: { type: 'STRING', enum: ['general','calendario','cursos','matricula','noticias','fuera_de_tema'] } }, required: ['intencion'] },\n    thinkingConfig: { thinkingLevel: 'minimal' } }\n}) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "c7b948e7-fea7-545f-89cd-17ba708338b1",
+      "name": "Clasificar intencion",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        200
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "REEMPLAZAR",
+          "name": "Gemini API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const ctx = $('Guardrails de entrada').first().json;\nconst validas = ['general','calendario','cursos','matricula','noticias','fuera_de_tema'];\nlet intencion = 'general';\ntry {\n  const txt = $input.first().json.candidates[0].content.parts[0].text;\n  const v = JSON.parse(txt).intencion;\n  if (validas.includes(v)) intencion = v;\n} catch (e) { /* si falla la clasificacion se usa el flujo general (RAG) */ }\nreturn [{ json: { ...ctx, intencion } }];"
+      },
+      "id": "cfa1fbc9-e47f-267d-43a7-d57d566b3fb3",
+      "name": "Parsear intencion",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r0",
+                    "leftValue": "={{ $json.intencion }}",
+                    "rightValue": "general",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "general"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r1",
+                    "leftValue": "={{ $json.intencion }}",
+                    "rightValue": "calendario",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "calendario"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r2",
+                    "leftValue": "={{ $json.intencion }}",
+                    "rightValue": "cursos",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "cursos"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r3",
+                    "leftValue": "={{ $json.intencion }}",
+                    "rightValue": "matricula",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "matricula"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "r4",
+                    "leftValue": "={{ $json.intencion }}",
+                    "rightValue": "noticias",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "noticias"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "fuera_de_tema"
+        }
+      },
+      "id": "1a1a973b-9d71-3703-45a3-80d4fa0bc201",
+      "name": "Ruteo por intencion",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1320,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cbdatos01ragger",
+          "mode": "list",
+          "cachedResultName": "01 Consulta general RAG"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "5605692d-af74-5265-d0e0-406748752d3e",
+      "name": "Subflujo 01 RAG",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        -40
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cbdatos02calend",
+          "mode": "list",
+          "cachedResultName": "02 Calendario academico"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "cd8fe432-4192-227a-466a-d47173b40a68",
+      "name": "Subflujo 02 Calendario",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        120
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cbdatos03cursos",
+          "mode": "list",
+          "cachedResultName": "03 Cursos realizados"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "f4a61c1b-df64-0157-babc-b2595d571966",
+      "name": "Subflujo 03 Cursos",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        280
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cbdatos03cursos",
+          "mode": "list",
+          "cachedResultName": "03 Cursos realizados"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "be8dc107-b35e-9e86-23f5-61b9cf33ceb4",
+      "name": "Subflujo 03 Matricula",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        440
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cbdatos04noticia",
+          "mode": "list",
+          "cachedResultName": "04 Noticias scraper"
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "15abbd2e-bf08-e760-ab9a-1f23a4a3dcc1",
+      "name": "Subflujo 04 Noticias",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        600
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { respuesta: 'Soy el asistente académico de la UNAB y solo puedo ayudarte con cursos, calendario académico, matrícula, competencias digitales, horas libres y noticias del día de educación, tecnología e ingeniería de sistemas. ¿En qué te ayudo?',\n  intencion: 'fuera_de_tema', fuentes: [] } }];"
+      },
+      "id": "2b2bb46c-cb4c-0490-cbd3-a1f65f6c47f8",
+      "name": "Respuesta fuera de tema",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validaciones de la respuesta antes de devolverla a la app.\nconst ctx = $('Parsear intencion').first().json;\nconst r = $input.first().json;\nconst FALLBACK = 'No pude generar una respuesta confiable en este momento. Intenta reformular tu pregunta o consulta unab.edu.co.';\nlet texto = String(r.respuesta || '').trim();\nconst fuentes = (Array.isArray(r.fuentes) ? r.fuentes : [])\n  .filter(f => f && typeof f.url === 'string' && /^https?:\\/\\//.test(f.url))\n  .map(f => ({ titulo: String(f.titulo || f.url).slice(0, 150), url: f.url }));\nconst permitidas = new Set(fuentes.map(f => f.url.replace(/[\\/.,;)]+$/, '')));\n\n// 1) solo URLs presentes en las fuentes recuperadas\ntexto = texto.replace(/https?:\\/\\/[^\\s)\\]>\"']+/g, (u) => {\n  const limpia = u.replace(/[\\/.,;:!?]+$/, '');\n  return permitidas.has(limpia) ? u : '(enlace omitido)';\n});\n// 2) ningun dato de un codigo de estudiante distinto al solicitante\nconst otros = (texto.toUpperCase().match(/U00[0-9]{6}/g) || []).filter(c => c !== ctx.estudiante_codigo);\n// 3) senales de fuga de instrucciones internas o credenciales\nconst fuga = /(system prompt|instrucciones del sistema|x-api-key|x-chat-token|api[_ ]?key\\s*[:=]|AIza[0-9A-Za-z_\\-]{20,})/i.test(texto);\nlet intencion = ctx.intencion;\nif (!texto || otros.length || fuga) { texto = FALLBACK; intencion = 'fuera_de_tema'; }\n// 4) limite de longitud\nif (texto.length > 1800) texto = texto.slice(0, 1780).replace(/\\s+\\S*$/, '') + '...';\nreturn [{ json: { http_status: 200, cuerpo: { respuesta: texto, intencion, fuentes: texto === FALLBACK ? [] : fuentes.slice(0, 5) } } }];"
+      },
+      "id": "31d89a58-f465-0b0a-6d78-7d48f71945e3",
+      "name": "Guardrails de salida",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json.cuerpo) }}",
+        "options": {
+          "responseCode": "={{ $json.http_status }}",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "id": "c6a643de-9bdc-289e-0066-b02146ef271c",
+      "name": "Responder",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2080,
+        300
+      ]
+    },
+    {
+      "id": "51d0d000-eeae-4f96-8d67-5699a435ebfa",
+      "name": "Es accion directa",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        770,
+        420
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "p1",
+              "leftValue": "={{ $json.accion }}",
+              "rightValue": "^(perfil|noticias)$",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "4aca90d2-aab4-406c-91d3-7c5dc824ab3e",
+      "name": "Consultar servidor MCP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        940
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.mcp_url }}/api/{{ $json.accion }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ estudiante_codigo: $json.estudiante_codigo, limite: 20 }) }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "MCP API Key"
+        }
+      }
+    },
+    {
+      "id": "333bdfeb-6345-4bcc-b7d0-a6aca6a016e9",
+      "name": "Respuesta directa",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        940
+      ],
+      "parameters": {
+        "jsCode": "// Devuelve a la app lo que entrega el servidor MCP por REST: /api/perfil (ficha) o /api/noticias (noticias del dia).\nconst r = $input.first().json;\nconst status = Number(r.statusCode || 500);\nlet body = r.body || {};\nif (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }\nif (status === 200 && body.perfil) return [{ json: { http_status: 200, cuerpo: { perfil: body.perfil } } }];\nif (status === 200 && body.noticias) return [{ json: { http_status: 200, cuerpo: { noticias: body.noticias } } }];\nconst msg = body.error || 'No se pudo consultar el servidor en este momento.';\nreturn [{ json: { http_status: status === 400 ? 400 : 502, cuerpo: { error: msg, respuesta: msg } } }];"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook chat": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de entrada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardrails de entrada": {
+      "main": [
+        [
+          {
+            "node": "Entrada valida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Entrada valida": {
+      "main": [
+        [
+          {
+            "node": "Es accion directa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clasificar intencion": {
+      "main": [
+        [
+          {
+            "node": "Parsear intencion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear intencion": {
+      "main": [
+        [
+          {
+            "node": "Ruteo por intencion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ruteo por intencion": {
+      "main": [
+        [
+          {
+            "node": "Subflujo 01 RAG",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Subflujo 02 Calendario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Subflujo 03 Cursos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Subflujo 03 Matricula",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Subflujo 04 Noticias",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respuesta fuera de tema",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subflujo 01 RAG": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subflujo 02 Calendario": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subflujo 03 Cursos": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subflujo 03 Matricula": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subflujo 04 Noticias": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta fuera de tema": {
+      "main": [
+        [
+          {
+            "node": "Guardrails de salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardrails de salida": {
+      "main": [
+        [
+          {
+            "node": "Responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es accion directa": {
+      "main": [
+        [
+          {
+            "node": "Consultar servidor MCP",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Clasificar intencion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar servidor MCP": {
+      "main": [
+        [
+          {
+            "node": "Respuesta directa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respuesta directa": {
+      "main": [
+        [
+          {
+            "node": "Responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

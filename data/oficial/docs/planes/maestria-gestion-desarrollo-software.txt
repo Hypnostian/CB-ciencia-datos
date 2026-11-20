@@ -1,0 +1,21 @@
+Fuente: https://unab.edu.co/programas/maestria-en-gestion-aplicacion-y-desarrollo-de-software/
+Maestría en Gestión, Aplicación y Desarrollo de Software
+Nivel: Posgrado (maestría). Modalidad: presencial.
+Total de créditos del programa: 36.
+
+Primer Semestre (13 créditos)
+- Arquitecturas para sistemas software (3 créditos)
+- Ingeniería de requerimientos, análisis y diseño de software (4 créditos)
+- Investigación para la innovación (2 créditos)
+- Liderazgo para el cambio (2 créditos)
+- Solución creativa de problemas (2 créditos)
+Segundo Semestre (12 créditos)
+- Ciencia de datos e inteligencia artificial (3 créditos)
+- Electiva I (3 créditos)
+- Gestión de proyectos de software (4 créditos)
+- Investigación y necesidades del entorno (2 créditos)
+Tercer Semestre (11 créditos)
+- Apropiación científica de la investigación (3 créditos)
+- Aseguramiento de la calidad y mejoramiento de procesos de software (3 créditos)
+- Electiva II (3 créditos)
+- Optativa en gestión, aplicación y desarrollo de software (2 créditos)

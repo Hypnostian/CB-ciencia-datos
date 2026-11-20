@@ -1,0 +1,6 @@
+fastmcp==4.2.0
+psycopg[binary]==3.3.9
+psycopg-pool==3.3.3
+httpx>=0.27
+uvicorn>=0.30
+faker>=30

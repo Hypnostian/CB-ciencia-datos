@@ -1,0 +1,736 @@
+{
+  "modelo": "gemini-embedding-001",
+  "dimensiones": 768,
+  "elegida": {
+    "max_tokens": 800,
+    "solape_tokens": 120
+  },
+  "estructura": [
+    {
+      "max_tokens": 300,
+      "solape_tokens": 45,
+      "fragmentos": 253,
+      "tokens_promedio": 138,
+      "tokens_maximo": 300,
+      "secciones_partidas": 21,
+      "contexto_top5_peor_caso": 1496
+    },
+    {
+      "max_tokens": 800,
+      "solape_tokens": 0,
+      "fragmentos": 221,
+      "tokens_promedio": 145,
+      "tokens_maximo": 793,
+      "secciones_partidas": 3,
+      "contexto_top5_peor_caso": 3561
+    },
+    {
+      "max_tokens": 800,
+      "solape_tokens": 120,
+      "fragmentos": 221,
+      "tokens_promedio": 146,
+      "tokens_maximo": 793,
+      "secciones_partidas": 3,
+      "contexto_top5_peor_caso": 3561
+    },
+    {
+      "max_tokens": 1500,
+      "solape_tokens": 225,
+      "fragmentos": 219,
+      "tokens_promedio": 146,
+      "tokens_maximo": 981,
+      "secciones_partidas": 1,
+      "contexto_top5_peor_caso": 3806
+    }
+  ],
+  "comparacion": {
+    "preguntas": 17,
+    "resultados": [
+      {
+        "max_tokens": 300,
+        "solape_tokens": 45,
+        "fragmentos": 253,
+        "tokens_promedio": 138,
+        "acierto@1": 1.0,
+        "acierto@3": 1.0,
+        "evidencia@3": 1.0,
+        "mrr": 1.0,
+        "detalle": [
+          {
+            "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.783
+          },
+          {
+            "pregunta": "¿Puedo cancelar materias después de matricularlas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.762
+          },
+          {
+            "pregunta": "¿Cómo solicito el reintegro a la universidad?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.729
+          },
+          {
+            "pregunta": "¿Cómo se calcula el promedio general acumulado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Qué es una homologación de cursos?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.761
+          },
+          {
+            "pregunta": "¿Qué son las validaciones de un curso y quién las puede pedir?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.785
+          },
+          {
+            "pregunta": "¿Qué materias se ven en cuarto semestre de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.752
+          },
+          {
+            "pregunta": "¿En qué semestre se hace la práctica en ingeniería de sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_asistente",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuánto cuesta la matrícula de primer ingreso de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.757
+          },
+          {
+            "pregunta": "¿Qué título otorga el programa de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.741
+          },
+          {
+            "pregunta": "¿Cómo funciona la formación en competencias digitales?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_asi_funciona",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Cuándo son las pruebas de competencias digitales para sexto semestre?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_pruebas_desde_sexto_semestre",
+            "similitud_top1": 0.783
+          },
+          {
+            "pregunta": "¿Puedo homologar los cursos de competencias digitales si ya vi Informática?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_homologacion",
+            "similitud_top1": 0.739
+          },
+          {
+            "pregunta": "¿Qué cursos vacacionales intensivos de competencias digitales hay?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_cursos_vacacionales_intensivos",
+            "similitud_top1": 0.749
+          },
+          {
+            "pregunta": "¿Qué es la prueba diagnóstica de competencias digitales de primer ingreso virtual?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_prueba_diagnostica_primer_ingreso_virtual",
+            "similitud_top1": 0.748
+          },
+          {
+            "pregunta": "¿Cuáles son los pasos para matricularme en pregrado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "matricula_pregrado",
+            "similitud_top1": 0.789
+          }
+        ]
+      },
+      {
+        "max_tokens": 800,
+        "solape_tokens": 0,
+        "fragmentos": 221,
+        "tokens_promedio": 145,
+        "acierto@1": 1.0,
+        "acierto@3": 1.0,
+        "evidencia@3": 1.0,
+        "mrr": 1.0,
+        "detalle": [
+          {
+            "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.783
+          },
+          {
+            "pregunta": "¿Puedo cancelar materias después de matricularlas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Cómo solicito el reintegro a la universidad?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.729
+          },
+          {
+            "pregunta": "¿Cómo se calcula el promedio general acumulado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Qué es una homologación de cursos?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.761
+          },
+          {
+            "pregunta": "¿Qué son las validaciones de un curso y quién las puede pedir?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.799
+          },
+          {
+            "pregunta": "¿Qué materias se ven en cuarto semestre de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿En qué semestre se hace la práctica en ingeniería de sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_asistente",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuánto cuesta la matrícula de primer ingreso de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.757
+          },
+          {
+            "pregunta": "¿Qué título otorga el programa de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.735
+          },
+          {
+            "pregunta": "¿Cómo funciona la formación en competencias digitales?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_asi_funciona",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Cuándo son las pruebas de competencias digitales para sexto semestre?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_pruebas_desde_sexto_semestre",
+            "similitud_top1": 0.785
+          },
+          {
+            "pregunta": "¿Puedo homologar los cursos de competencias digitales si ya vi Informática?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_homologacion",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Qué cursos vacacionales intensivos de competencias digitales hay?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_cursos_vacacionales_intensivos",
+            "similitud_top1": 0.749
+          },
+          {
+            "pregunta": "¿Qué es la prueba diagnóstica de competencias digitales de primer ingreso virtual?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_prueba_diagnostica_primer_ingreso_virtual",
+            "similitud_top1": 0.748
+          },
+          {
+            "pregunta": "¿Cuáles son los pasos para matricularme en pregrado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "matricula_pregrado",
+            "similitud_top1": 0.789
+          }
+        ]
+      },
+      {
+        "max_tokens": 800,
+        "solape_tokens": 120,
+        "fragmentos": 221,
+        "tokens_promedio": 146,
+        "acierto@1": 1.0,
+        "acierto@3": 1.0,
+        "evidencia@3": 1.0,
+        "mrr": 1.0,
+        "detalle": [
+          {
+            "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.783
+          },
+          {
+            "pregunta": "¿Puedo cancelar materias después de matricularlas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Cómo solicito el reintegro a la universidad?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.729
+          },
+          {
+            "pregunta": "¿Cómo se calcula el promedio general acumulado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Qué es una homologación de cursos?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.761
+          },
+          {
+            "pregunta": "¿Qué son las validaciones de un curso y quién las puede pedir?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.799
+          },
+          {
+            "pregunta": "¿Qué materias se ven en cuarto semestre de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿En qué semestre se hace la práctica en ingeniería de sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_asistente",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuánto cuesta la matrícula de primer ingreso de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.757
+          },
+          {
+            "pregunta": "¿Qué título otorga el programa de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.735
+          },
+          {
+            "pregunta": "¿Cómo funciona la formación en competencias digitales?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_asi_funciona",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Cuándo son las pruebas de competencias digitales para sexto semestre?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_pruebas_desde_sexto_semestre",
+            "similitud_top1": 0.785
+          },
+          {
+            "pregunta": "¿Puedo homologar los cursos de competencias digitales si ya vi Informática?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_homologacion",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Qué cursos vacacionales intensivos de competencias digitales hay?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_cursos_vacacionales_intensivos",
+            "similitud_top1": 0.749
+          },
+          {
+            "pregunta": "¿Qué es la prueba diagnóstica de competencias digitales de primer ingreso virtual?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_prueba_diagnostica_primer_ingreso_virtual",
+            "similitud_top1": 0.748
+          },
+          {
+            "pregunta": "¿Cuáles son los pasos para matricularme en pregrado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "matricula_pregrado",
+            "similitud_top1": 0.789
+          }
+        ]
+      },
+      {
+        "max_tokens": 1500,
+        "solape_tokens": 225,
+        "fragmentos": 219,
+        "tokens_promedio": 146,
+        "acierto@1": 1.0,
+        "acierto@3": 1.0,
+        "evidencia@3": 1.0,
+        "mrr": 1.0,
+        "detalle": [
+          {
+            "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.783
+          },
+          {
+            "pregunta": "¿Puedo cancelar materias después de matricularlas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Cómo solicito el reintegro a la universidad?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.729
+          },
+          {
+            "pregunta": "¿Cómo se calcula el promedio general acumulado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.764
+          },
+          {
+            "pregunta": "¿Qué es una homologación de cursos?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.761
+          },
+          {
+            "pregunta": "¿Qué son las validaciones de un curso y quién las puede pedir?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "reglamento",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.799
+          },
+          {
+            "pregunta": "¿Qué materias se ven en cuarto semestre de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_sistemas",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿En qué semestre se hace la práctica en ingeniería de sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "plan_asistente",
+            "similitud_top1": 0.751
+          },
+          {
+            "pregunta": "¿Cuánto cuesta la matrícula de primer ingreso de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.757
+          },
+          {
+            "pregunta": "¿Qué título otorga el programa de Ingeniería de Sistemas?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "programa_ingenieria_de_sistemas",
+            "similitud_top1": 0.735
+          },
+          {
+            "pregunta": "¿Cómo funciona la formación en competencias digitales?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_asi_funciona",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Cuándo son las pruebas de competencias digitales para sexto semestre?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_pruebas_desde_sexto_semestre",
+            "similitud_top1": 0.785
+          },
+          {
+            "pregunta": "¿Puedo homologar los cursos de competencias digitales si ya vi Informática?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_homologacion",
+            "similitud_top1": 0.736
+          },
+          {
+            "pregunta": "¿Qué cursos vacacionales intensivos de competencias digitales hay?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_cursos_vacacionales_intensivos",
+            "similitud_top1": 0.749
+          },
+          {
+            "pregunta": "¿Qué es la prueba diagnóstica de competencias digitales de primer ingreso virtual?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "ccd_prueba_diagnostica_primer_ingreso_virtual",
+            "similitud_top1": 0.748
+          },
+          {
+            "pregunta": "¿Cuáles son los pasos para matricularme en pregrado?",
+            "posicion": 1,
+            "evidencia_top3": true,
+            "top1": "matricula_pregrado",
+            "similitud_top1": 0.789
+          }
+        ]
+      }
+    ]
+  },
+  "produccion": {
+    "fragmentos_indice": 434,
+    "preguntas": 25,
+    "acierto@1": 1.0,
+    "acierto@3": 1.0,
+    "evidencia@3": 1.0,
+    "mrr": 1.0,
+    "similitud_top1_promedio": 0.758,
+    "detalle": [
+      {
+        "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.783
+      },
+      {
+        "pregunta": "¿Puedo cancelar materias después de matricularlas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.764
+      },
+      {
+        "pregunta": "¿Cómo solicito el reintegro a la universidad?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.729
+      },
+      {
+        "pregunta": "¿Cómo se calcula el promedio general acumulado?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.764
+      },
+      {
+        "pregunta": "¿Qué es una homologación de cursos?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.761
+      },
+      {
+        "pregunta": "¿Qué son las validaciones de un curso y quién las puede pedir?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.751
+      },
+      {
+        "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.799
+      },
+      {
+        "pregunta": "¿Qué materias se ven en cuarto semestre de Ingeniería de Sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.751
+      },
+      {
+        "pregunta": "¿En qué semestre se hace la práctica en ingeniería de sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.751
+      },
+      {
+        "pregunta": "¿Cuánto cuesta la matrícula de primer ingreso de Ingeniería de Sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.757
+      },
+      {
+        "pregunta": "¿Qué título otorga el programa de Ingeniería de Sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.734
+      },
+      {
+        "pregunta": "¿Cómo funciona la formación en competencias digitales?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.736
+      },
+      {
+        "pregunta": "¿Cuándo son las pruebas de competencias digitales para sexto semestre?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.785
+      },
+      {
+        "pregunta": "¿Puedo homologar los cursos de competencias digitales si ya vi Informática?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.736
+      },
+      {
+        "pregunta": "¿Qué cursos vacacionales intensivos de competencias digitales hay?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.749
+      },
+      {
+        "pregunta": "¿Qué es la prueba diagnóstica de competencias digitales de primer ingreso virtual?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.748
+      },
+      {
+        "pregunta": "¿Cuáles son los pasos para matricularme en pregrado?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.789
+      },
+      {
+        "pregunta": "¿Qué promedio necesito para estudiar dos carreras al tiempo?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.735
+      },
+      {
+        "pregunta": "¿Cuántas veces puedo cancelar la misma materia?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.763
+      },
+      {
+        "pregunta": "¿Con qué nota final puedo habilitar una materia?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.786
+      },
+      {
+        "pregunta": "¿Cuánto pesa la prueba de habilitación en la nota definitiva?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.775
+      },
+      {
+        "pregunta": "Si no presenté un parcial, ¿puedo pedir un examen supletorio?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.749
+      },
+      {
+        "pregunta": "¿Cuánto vale el cobro de competencias digitales en Ingeniería de Sistemas?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.73
+      },
+      {
+        "pregunta": "¿Qué materias tiene el primer semestre de Ingeniería de Sistemas virtual?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.795
+      },
+      {
+        "pregunta": "¿Cuántos créditos vale Proyectos en ingeniería de sistemas II?",
+        "posicion": 1,
+        "evidencia_top3": true,
+        "similitud_top1": 0.73
+      }
+    ]
+  }
+}

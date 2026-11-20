@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo propio: birrete de graduación con globo de chat (círculos y trazos simples) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Globo de chat -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,36 h48 a6,6 0 0 1 6,6 v26 a6,6 0 0 1 -6,6 h-30 l-12,10 v-10 h-6 a6,6 0 0 1 -6,-6 v-26 a6,6 0 0 1 6,-6 z" />
+    <!-- Birrete -->
+    <path
+        android:fillColor="#F79800"
+        android:pathData="M54,40 L74,50 L54,60 L34,50 z" />
+    <path
+        android:fillColor="#F79800"
+        android:pathData="M43,56 v8 c0,3 22,3 22,0 v-8 l-11,5.5 z" />
+    <path
+        android:fillColor="#8600DD"
+        android:pathData="M72,52 h2 v10 h-2 z" />
+</vector>

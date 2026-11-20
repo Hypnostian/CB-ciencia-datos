@@ -1,0 +1,22 @@
+# Servicio systemd del servidor MCP (alternativa a Docker cuando la instancia ya aloja otros proyectos).
+# Instalación (en la instancia, con el código en ~/cb-ciencia-datos/mcp-server y su .env con permisos 600):
+#   cd ~/cb-ciencia-datos/mcp-server && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#   sudo cp ~/cb-ciencia-datos/infra/cb-mcp.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now cb-mcp
+# No toca el firewall de la instancia: el acceso se controla con el Security Group (puerto 9000) y X-API-Key.
+[Unit]
+Description=Asistente academico CB - servidor MCP (FastMCP, puerto 9000)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/cb-ciencia-datos/mcp-server
+EnvironmentFile=/home/ubuntu/cb-ciencia-datos/mcp-server/.env
+Environment=MCP_PORT=9000
+ExecStart=/home/ubuntu/cb-ciencia-datos/mcp-server/.venv/bin/python -m app.servidor
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+Fuente: https://unab.edu.co/programas/manejo-de-herramientas-para-codificacion-de-software/
+Manejo de Herramientas para Codificación de Software
+Nivel: Técnico. Modalidad: presencial.
+Total de créditos del programa: 37.
+
+Primer Ciclo (13 créditos)
+- Competencias digitales (1 crédito)
+- Comunicacion efectiva (1 crédito)
+- Ingles A1 (2 créditos)
+- Lenguajes y entornos de programacion (6 créditos)
+- Logica matematica y algoritmica (2 créditos)
+- Soy autónomo (1 crédito)
+Segundo Ciclo (12 créditos)
+- Infraestructura tecnologica y ciberseguridad (3 créditos)
+- Interfaces de programacion de aplicaciones (3 créditos)
+- Procedimientos agiles de programacion (3 créditos)
+- Programacion con IA (3 créditos)
+Tercer Ciclo (12 créditos)
+- Emprendimiento y creatividad (1 crédito)
+- Medio ambiente y sostenibilidad (1 crédito)
+- Practica integral (10 créditos)

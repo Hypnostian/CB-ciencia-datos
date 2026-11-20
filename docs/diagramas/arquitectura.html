@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Arquitectura del asistente</title>
+<style>
+  :root { --morado: #7A1FD6; --morado-osc: #3F0A75; --naranja: #F79800; --cian: #00A3CC; --verde: #4FA83D; --gris: #5B5670; --fondo: #F7F4FC; }
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1800px; height: 1140px; background: #fff; font-family: "Segoe UI", Arial, sans-serif; color: #231B33; position: relative; }
+  .caja { position: absolute; border-radius: 14px; padding: 10px 12px; background: #fff; border: 2px solid var(--gris); }
+  .grupo { position: absolute; border-radius: 22px; border: 2.5px solid; }
+  .tg { position: absolute; font-weight: 700; font-size: 21px; }
+  .sg { position: absolute; font-size: 14px; color: var(--gris); }
+  h3 { margin: 0 0 4px; font-size: 16px; }
+  p, li { margin: 0; font-size: 13.2px; line-height: 1.32; }
+  ul { margin: 2px 0 0; padding-left: 17px; }
+  .chip { display: inline-block; font-size: 11.5px; padding: 1px 7px; border-radius: 10px; color: #fff; margin-top: 4px; }
+  svg { position: absolute; left: 0; top: 0; }
+  .num { font-weight: 700; font-size: 14px; fill: #fff; }
+  .et { font-size: 13px; fill: #231B33; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="tg" style="left:30px;top:18px;font-size:28px;color:var(--morado-osc)">Arquitectura del Asistente Académico UNAB</div>
+<div class="sg" style="left:30px;top:58px">App Android + n8n (agentes con Gemini) + servidor MCP en AWS + PostgreSQL/pgvector en Supabase + RAG + scraper de noticias. Los números 1 a 8 siguen el flujo de los datos.</div>
+
+<!-- Estudiante y app -->
+<div class="caja" style="left:30px;top:100px;width:280px;height:70px;border-color:var(--naranja);background:#FFF6E6">
+  <h3 style="font-size:15px">Estudiante (Ing. de Sistemas)</h3><p>ingresa con su código U00 + 6 dígitos</p></div>
+<div class="caja" style="left:30px;top:185px;width:280px;height:400px;border-color:var(--naranja);border-width:3px">
+  <h3 style="font-size:19px">App Android</h3>
+  <p>Kotlin + Jetpack Compose (Material 3), OkHttp, DataStore</p>
+  <ul style="margin-top:8px">
+    <li><b>Ingreso</b> con el código (acción <i>perfil</i>)</li>
+    <li><b>Chat</b>: matrícula, estado académico, proyección, recomendaciones, requisitos, calendario, noticias</li>
+    <li><b>Mi perfil y horario</b>: avance, competencias digitales, horas libres, NRC y docentes</li>
+    <li><b>Noticias del día</b> (acción <i>noticias</i>) con categoría, fuente y fecha</li>
+  </ul>
+  <p style="margin-top:10px">Respuestas con insignia de intención y fuentes tocables. Errores de red, token y servidor explicados al usuario.</p>
+  <span class="chip" style="background:var(--naranja)">android/</span>
+</div>
+
+<!-- Fuentes externas -->
+<div class="caja" style="left:30px;top:650px;width:280px;height:450px;border-color:var(--verde);background:#F3FAF0">
+  <h3 style="font-size:18px">Fuentes externas</h3>
+  <ul>
+    <li><b>unab.edu.co</b>: Reglamento Estudiantil de Pregrado, planes de estudio (133 programas), Centro de Competencias Digitales, matrícula, página del programa</li>
+    <li><b>Plan oficial de Ingeniería de Sistemas</b> (PDF de la página del programa, 151 créditos)</li>
+    <li><b>API WordPress de unab.edu.co</b>: noticias UNAB</li>
+    <li><b>RSS de El Tiempo</b>: Educación y Tecnósfera</li>
+    <li><b>Google Noticias</b>: ingeniería de sistemas y desarrollo de software</li>
+    <li><b>Google Sheets</b>: calendario académico</li>
+    <li><b>APOLO UNAB</b>: perfiles públicos de profesores</li>
+  </ul>
+  <span class="chip" style="background:var(--verde)">data/oficial/, scraper/</span>
+</div>
+
+<!-- n8n -->
+<div class="grupo" style="left:360px;top:100px;width:870px;height:612px;border-color:var(--morado);background:#FBF8FF"></div>
+<div class="tg" style="left:380px;top:110px;color:var(--morado)">n8n Cloud</div>
+<div class="sg" style="left:500px;top:116px">6 flujos versionados en n8n/workflows/*.json</div>
+<div class="sg" style="left:380px;top:148px;font-weight:700;color:var(--morado-osc)">00 Chat principal</div>
+
+<div class="caja" style="left:380px;top:172px;width:142px;height:130px;border-color:var(--morado)"><h3>Webhook</h3><p>POST /webhook/<br>unab-chat</p></div>
+<div class="caja" style="left:534px;top:172px;width:158px;height:130px;border-color:#C2410C;background:#FFF4EC"><h3>Guardrails de entrada</h3><p>token, formato, inyección, credenciales y datos ajenos</p></div>
+<div class="caja" style="left:704px;top:172px;width:150px;height:130px;border-color:var(--morado)"><h3>Clasificar intención</h3><p>Gemini con salida JSON (6 intenciones)</p></div>
+<div class="caja" style="left:866px;top:172px;width:150px;height:130px;border-color:var(--morado)"><h3>Ruteo</h3><p>Switch hacia los subflujos 01 a 04 o fuera de tema</p></div>
+<div class="caja" style="left:1028px;top:172px;width:184px;height:130px;border-color:#C2410C;background:#FFF4EC"><h3>Guardrails de salida</h3><p>solo URLs citadas, sin datos ajenos ni fugas, máx. 1800 caracteres</p></div>
+<div class="caja" style="left:380px;top:314px;width:142px;height:58px;border-color:var(--morado)"><h3>Responder</h3><p>JSON del contrato</p></div>
+<div class="caja" style="left:534px;top:314px;width:678px;height:58px;border-color:var(--cian);background:#EEFAFD"><h3>Acciones directas sin LLM: <i>perfil</i> y <i>noticias</i></h3><p>Consultar servidor MCP por REST (/api/perfil, /api/noticias) y devolver la ficha o las noticias del día a la app</p></div>
+
+<div class="sg" style="left:380px;top:382px;font-weight:700;color:var(--morado-osc)">Subflujos (Execute Workflow): agente de IA + Gemini + memoria en Postgres (8 mensajes por sesión)</div>
+<div class="caja" style="left:380px;top:408px;width:160px;height:286px;border-color:var(--morado)"><h3>01 Consulta general (RAG)</h3><p>Embedding de la pregunta → <b>match_documentos</b> (top 5, umbral 0.35) → Agente RAG responde solo con el contexto y cita las fuentes</p></div>
+<div class="caja" style="left:548px;top:408px;width:160px;height:286px;border-color:var(--morado)"><h3>02 Calendario</h3><p>Lee la hoja de Google Sheets → Agente calendario (fechas verificadas)</p></div>
+<div class="caja" style="left:716px;top:408px;width:168px;height:286px;border-color:var(--morado);border-width:3px"><h3>03 Agente académico</h3><p>Herramientas del servidor MCP: matrícula, avance, proyección, requisitos, recomendaciones, competencias digitales, horas libres, CCD, cursos y profesores</p><p style="margin-top:6px">Intenciones <i>cursos</i> y <i>matricula</i></p></div>
+<div class="caja" style="left:892px;top:408px;width:160px;height:286px;border-color:var(--morado)"><h3>04 Noticias</h3><p><b>A (automática)</b>: cada 6 h descarga 7 fuentes, normaliza y hace upsert en <i>noticias</i></p><p style="margin-top:6px"><b>B</b>: noticias de hoy primero → Agente noticias (categoría, fuente y fecha)</p></div>
+<div class="caja" style="left:1060px;top:408px;width:152px;height:286px;border-color:var(--morado)"><h3>05 Ingesta de embeddings</h3><p>Manual: textos oficiales → fragmentos de ~800 tokens con solape de 120 → embeddings → pgvector</p><p style="margin-top:6px">(equivale a rag/ingesta.py)</p></div>
+
+<!-- Gemini -->
+<div class="caja" style="left:1270px;top:100px;width:500px;height:170px;border-color:#2563EB;background:#EFF5FF;border-width:3px">
+  <h3 style="font-size:19px">Google Gemini API</h3>
+  <ul>
+    <li><b>gemini-3.5-flash-lite</b>: clasificador de intención (temperatura 0, JSON) y los 4 agentes (temperatura 0.2)</li>
+    <li><b>gemini-embedding-001</b>: vectores de 768 dimensiones (RETRIEVAL_DOCUMENT para fragmentos, RETRIEVAL_QUERY para preguntas)</li>
+  </ul>
+</div>
+
+<!-- AWS -->
+<div class="grupo" style="left:1270px;top:300px;width:500px;height:412px;border-color:#D97706;background:#FFFBF2"></div>
+<div class="tg" style="left:1290px;top:310px;color:#B45309">AWS EC2 (AWS Academy Learner Lab)</div>
+<div class="sg" style="left:1290px;top:340px">Ubuntu, IP elástica, servicio systemd <b>cb-mcp</b>, puerto 9000</div>
+<div class="caja" style="left:1290px;top:368px;width:460px;height:326px;border-color:#D97706;border-width:3px">
+  <h3 style="font-size:18px">Servidor MCP (FastMCP, Python)</h3>
+  <p>HTTP streamable en /mcp. Cada solicitud exige <b>X-API-Key</b>. SQL parametrizado con pool psycopg.</p>
+  <div style="display:flex;gap:14px;margin-top:6px">
+    <ul style="flex:1"><li>perfil_estudiante</li><li>estado_matricula</li><li>avance_plan</li><li>proyeccion_semestres</li><li>requisitos_pendientes</li><li>recomendaciones</li><li>competencias_digitales</li></ul>
+    <ul style="flex:1"><li>horas_libres</li><li>cursos_ccd</li><li>info_curso</li><li>buscar_profesor</li><li>calendario</li><li>noticias</li><li>buscar_documentos</li></ul>
+  </div>
+  <p style="margin-top:6px">REST para la app (vía n8n): <b>/api/perfil</b>, <b>/api/noticias</b>; <b>/health</b> sin clave.</p>
+  <p>registro.py crea al vuelo un estudiante sintético para un código nuevo.</p>
+  <span class="chip" style="background:#D97706">mcp-server/ (14 herramientas)</span>
+</div>
+
+<!-- Supabase -->
+<div class="grupo" style="left:360px;top:775px;width:1410px;height:325px;border-color:var(--verde);background:#F6FBF3"></div>
+<div class="tg" style="left:380px;top:785px;color:#2F7A22">Supabase: PostgreSQL + pgvector</div>
+<div class="sg" style="left:730px;top:791px">RLS activo en todas las tablas; vistas con security_invoker. Scripts en db/migrations (001 a 006) y db/seed.</div>
+<div class="caja" style="left:380px;top:822px;width:452px;height:130px;border-color:var(--verde)"><h3>Académico (simula Banner)</h3><p>programas, <b>cursos</b> (51 del plan oficial, 151 créditos), <b>prerrequisitos</b> (simulados), periodos, secciones (NRC, docente, horario), <b>estudiantes</b> (122), <b>matriculas</b> con <b>notas</b>, profesores (APOLO)</p></div>
+<div class="caja" style="left:848px;top:822px;width:452px;height:130px;border-color:var(--verde)"><h3>Requisitos de grado</h3><p>competencias_digitales (5 pilares R2025), resultados_competencias, horas_libres (96 requeridas), cursos_ccd y historial_ccd (Centro de Competencias Digitales)</p></div>
+<div class="caja" style="left:1316px;top:822px;width:436px;height:130px;border-color:#2563EB;background:#F4F8FF"><h3>RAG</h3><p>documentos (145) y documentos_fragmentos (434) con <b>embedding vector(768)</b>, índice HNSW coseno y función <b>match_documentos(vector, k)</b></p></div>
+<div class="caja" style="left:380px;top:964px;width:452px;height:120px;border-color:var(--verde)"><h3>Vistas analíticas</h3><p>v_cursos_estudiante, v_estado_matricula, v_avance_plan, v_proyeccion_semestres, v_requisitos_pendientes, v_historial_ccd, v_competencias_estudiante</p></div>
+<div class="caja" style="left:848px;top:964px;width:452px;height:120px;border-color:var(--verde)"><h3>Noticias y calendario</h3><p><b>noticias</b> (título, url, fecha, categoría, resumen, fuente; upsert por url) y calendario_academico</p></div>
+<div class="caja" style="left:1316px;top:964px;width:436px;height:120px;border-color:var(--morado)"><h3>Memoria de los agentes</h3><p><b>n8n_chat_histories</b>: historial por estudiante y sesión (session_id de la app)</p></div>
+
+<svg width="1800" height="1140" viewBox="0 0 1800 1140">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#231B33"/></marker>
+  </defs>
+  <g stroke="#231B33" stroke-width="2.4" fill="none">
+    <path d="M310,250 L378,232" marker-start="url(#f)" marker-end="url(#f)"/>
+    <path d="M779,172 L779,152 L1268,152" marker-end="url(#f)"/>
+    <path d="M800,694 L800,752 L1330,752 L1330,714" marker-end="url(#f)"/>
+    <path d="M1212,343 L1288,388" marker-end="url(#f)"/>
+    <path d="M1600,714 L1600,773" marker-end="url(#f)"/>
+    <path d="M460,694 L460,773" marker-end="url(#f)"/>
+    <path d="M628,694 L628,773" marker-end="url(#f)"/>
+    <path d="M360,560 L312,648" marker-end="url(#f)"/>
+    <path d="M310,1040 L358,1040" marker-end="url(#f)"/>
+  </g>
+  <g>
+    <circle cx="344" cy="222" r="13" fill="#F79800"/><text class="num" x="344" y="227" text-anchor="middle">1</text>
+    <circle cx="1020" cy="152" r="13" fill="#2563EB"/><text class="num" x="1020" y="157" text-anchor="middle">2</text>
+    <text class="et" x="1040" y="144">LLM y embeddings</text>
+    <circle cx="1240" cy="752" r="13" fill="#D97706"/><text class="num" x="1240" y="757" text-anchor="middle">3</text>
+    <text class="et" x="880" y="744">MCP Client Tool: HTTP streamable + X-API-Key</text>
+    <text class="et" x="1222" y="330" transform="rotate(33 1222 330)">REST</text>
+    <circle cx="1600" cy="744" r="13" fill="#4FA83D"/><text class="num" x="1600" y="749" text-anchor="middle">4</text>
+    <text class="et" x="1620" y="749">SQL parametrizado</text>
+    <circle cx="460" cy="736" r="13" fill="#4FA83D"/><text class="num" x="460" y="741" text-anchor="middle">5</text>
+    <text class="et" x="480" y="741">match_documentos</text>
+    <circle cx="628" cy="736" r="13" fill="#4FA83D"/><text class="num" x="628" y="741" text-anchor="middle">6</text>
+    <text class="et" x="648" y="741">memoria y noticias</text>
+    <circle cx="336" cy="610" r="13" fill="#4FA83D"/><text class="num" x="336" y="615" text-anchor="middle">7</text>
+    <circle cx="334" cy="1040" r="13" fill="#4FA83D"/><text class="num" x="334" y="1045" text-anchor="middle">8</text>
+    <text class="et" x="30" y="1128">① App y webhook por HTTPS con X-Chat-Token.   ⑦ n8n lee Google Sheets (02), la API WordPress y los RSS (04).   ⑧ Ingesta RAG: textos oficiales → fragmentos → embeddings → pgvector (rag/ingesta.py o flujo 05).</text>
+  </g>
+</svg>
+</body>
+</html>

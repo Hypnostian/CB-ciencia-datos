@@ -1,0 +1,8 @@
+id,ruta,nombre,obligatorio,descripcion,fuente_url
+1,1,Interacción Digital,true,Ruta 1 del Centro de Competencias Digitales (obligatoria).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+2,2,Habilidades en Analítica Digital,false,Ruta 2 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+3,2,Marca Personal Digital,false,Ruta 2 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+4,2,Creación de Contenidos Digitales,false,Ruta 2 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+5,3,IA Generativa,false,Ruta 3 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+6,3,Marco Legal Digital,false,Ruta 3 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/
+7,3,Cuidado y Bienestar Digital,false,Ruta 3 del Centro de Competencias Digitales (se elige un curso de la ruta).,https://unab.edu.co/inscripcion-a-las-pruebas-de-competencias-digitales-estudiantes-desde-sexto-semestre/

@@ -1,0 +1,34 @@
+# Secretos
+.env
+infra/.env
+mcp-server/.env
+# Entornos y cachés de Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+
+# Llaves privadas (SSH/AWS)
+*.pem
+
+# Caché local del experimento de fragmentación
+rag/.cache_embeddings.json
+
+# Archivos temporales de Word
+~$*
+
+# Compilados, IDE y temporales
+*.apk
+*.aab
+android/.idea/
+.idea/
+*.log
+Thumbs.db
+.DS_Store
+
+

@@ -1,0 +1,178 @@
+{
+  "umbral": 0.35,
+  "modelo": "gemini-embedding-001",
+  "dimensiones": 768,
+  "tarea": "RETRIEVAL_QUERY",
+  "en_dominio": {
+    "resumen": {
+      "preguntas": 15,
+      "minimo": 0.705,
+      "promedio": 0.765,
+      "maximo": 0.799,
+      "sobre_0.35": 15
+    },
+    "detalle": [
+      {
+        "pregunta": "¿Cuántas veces puedo cancelar una asignatura?",
+        "similitud_top1": 0.76,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuándo un estudiante queda en prueba académica?",
+        "similitud_top1": 0.783,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Qué promedio necesito para estudiar dos carreras al tiempo?",
+        "similitud_top1": 0.735,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuánto equivale un crédito académico en horas de trabajo?",
+        "similitud_top1": 0.788,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Qué requisitos hay para homologar cursos de otra universidad?",
+        "similitud_top1": 0.768,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuáles son los cursos del primer semestre de Ingeniería de Sistemas?",
+        "similitud_top1": 0.778,
+        "documento": "Plan de estudios: Ingeniería de Sistemas (151 créditos)"
+      },
+      {
+        "pregunta": "¿Cuántos créditos tiene el plan de Ingeniería de Sistemas?",
+        "similitud_top1": 0.799,
+        "documento": "Plan de estudios: Ingeniería de Sistemas (151 créditos)"
+      },
+      {
+        "pregunta": "¿Cómo es el proceso de matrícula de pregrado?",
+        "similitud_top1": 0.778,
+        "documento": "Matrícula Pregrado profesional"
+      },
+      {
+        "pregunta": "¿Cuándo son las inscripciones de los cursos vacacionales de competencias digitales?",
+        "similitud_top1": 0.772,
+        "documento": "Próximamente cursos vacacionales de Competencias Digitales UNAB"
+      },
+      {
+        "pregunta": "¿Qué es la insignia de competencias digitales del CCD?",
+        "similitud_top1": 0.705,
+        "documento": "Así funciona la formación en Competencias Digitales de la UNAB"
+      },
+      {
+        "pregunta": "¿Qué pasa si pierdo el derecho a renovar la matrícula?",
+        "similitud_top1": 0.726,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuál es la calificación mínima para aprobar una prueba?",
+        "similitud_top1": 0.744,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Qué requisitos hay para obtener el título de pregrado?",
+        "similitud_top1": 0.782,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuándo se presenta la prueba de competencias digitales desde sexto semestre?",
+        "similitud_top1": 0.778,
+        "documento": "Inscripción a las pruebas de Competencias Digitales (estudiantes desde sexto semestre)"
+      },
+      {
+        "pregunta": "¿Qué es el Programa de Recuperación Académica?",
+        "similitud_top1": 0.78,
+        "documento": "Reglamento estudiantil pregrado"
+      }
+    ]
+  },
+  "fuera_de_dominio": {
+    "resumen": {
+      "preguntas": 15,
+      "minimo": 0.549,
+      "promedio": 0.576,
+      "maximo": 0.611,
+      "sobre_0.35": 15
+    },
+    "detalle": [
+      {
+        "pregunta": "¿Quién ganó el último mundial de fútbol?",
+        "similitud_top1": 0.583,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "Dame una receta de arepas con queso.",
+        "similitud_top1": 0.592,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuántos goles marcó Messi en su carrera?",
+        "similitud_top1": 0.571,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cómo se hace un sancocho de gallina?",
+        "similitud_top1": 0.571,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Quién es la cantante más famosa del pop latino?",
+        "similitud_top1": 0.578,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuál es la edad de Shakira?",
+        "similitud_top1": 0.591,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cómo invierto una lista en Python?",
+        "similitud_top1": 0.559,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Qué diferencia hay entre una lista y una tupla en Python?",
+        "similitud_top1": 0.552,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "Escríbeme un poema sobre el mar.",
+        "similitud_top1": 0.599,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cuál es la capital de Australia?",
+        "similitud_top1": 0.549,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cómo se prepara una pizza napolitana?",
+        "similitud_top1": 0.552,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Quién ganó el Tour de Francia el año pasado?",
+        "similitud_top1": 0.582,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "Cuéntame un chiste de programadores.",
+        "similitud_top1": 0.611,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Qué película ganó el Óscar a mejor película el año pasado?",
+        "similitud_top1": 0.563,
+        "documento": "Reglamento estudiantil pregrado"
+      },
+      {
+        "pregunta": "¿Cómo cambio la llanta de una bicicleta?",
+        "similitud_top1": 0.589,
+        "documento": "Reglamento estudiantil pregrado"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+id,programa_id,codigo,nombre,creditos,semestre_plan,tipo,es_oficial
+1,1,ISIS101,Álgebra lineal,3,1,obligatorio,true
+2,1,ISIS102,Cálculo diferencial,4,1,obligatorio,true
+3,1,ISIS103,Expresión,4,1,obligatorio,true
+4,1,ISIS104,Fundamentos de programación,3,1,obligatorio,true
+5,1,ISIS105,Seminario de ingeniería I,2,1,obligatorio,true
+6,1,ISIS201,Cálculo integral,4,2,obligatorio,true
+7,1,ISIS202,Diseño de interfaces de usuario,3,2,obligatorio,true
+8,1,ISIS203,Identidad,3,2,obligatorio,true
+9,1,ISIS204,Laboratorio de mecánica,0,2,obligatorio,true
+10,1,ISIS205,Mecánica y laboratorio,3,2,obligatorio,true
+11,1,ISIS206,Programación de computadores,3,2,obligatorio,true
+12,1,ISIS207,"Taller de deportes, recreación y cultura",1,2,obligatorio,true
+13,1,ISIS208,Taller de desarrollo humano,1,2,obligatorio,true
+14,1,ISIS301,Cálculo en varias variables,3,3,obligatorio,true
+15,1,ISIS302,Creatividad,3,3,obligatorio,true
+16,1,ISIS303,Electromagnetismo y laboratorio,3,3,obligatorio,true
+17,1,ISIS304,Estructura de datos y análisis de algoritmos,3,3,obligatorio,true
+18,1,ISIS305,Laboratorio de electromagnetismo,0,3,obligatorio,true
+19,1,ISIS306,Matemáticas computacionales,3,3,obligatorio,true
+20,1,ISIS307,Seminario de ingeniería II,2,3,obligatorio,true
+21,1,ISIS401,Base de datos I,3,4,obligatorio,true
+22,1,ISIS402,Desarrollo multimedia,3,4,obligatorio,true
+23,1,ISIS403,Ecuaciones diferenciales,3,4,obligatorio,true
+24,1,ISIS404,Estadística general,3,4,obligatorio,true
+25,1,ISIS405,Inteligencia artificial,3,4,obligatorio,true
+26,1,ISIS406,Tecnologías móviles,3,4,obligatorio,true
+27,1,ISIS501,"Actividades libres de recreación, deporte y cultura y de desarrollo humano",2,5,obligatorio,true
+28,1,ISIS502,Arquitectura de software,3,5,obligatorio,true
+29,1,ISIS503,Base de datos II,3,5,obligatorio,true
+30,1,ISIS504,Electiva de profundización I,3,5,electivo,true
+31,1,ISIS505,Infraestructura tecnológica,3,5,obligatorio,true
+32,1,ISIS506,Ingeniería de software I,3,5,obligatorio,true
+33,1,ISIS601,Ciencias de datos,3,6,obligatorio,true
+34,1,ISIS602,Electiva de profundización II,3,6,electivo,true
+35,1,ISIS603,Ética de la ingeniería de sistemas,2,6,obligatorio,true
+36,1,ISIS604,Ingeniería de software II,3,6,obligatorio,true
+37,1,ISIS605,Internet de las cosas,3,6,obligatorio,true
+38,1,ISIS606,Teoría de sistemas y organizaciones,3,6,obligatorio,true
+39,1,ISIS701,Ciberseguridad,3,7,obligatorio,true
+40,1,ISIS702,Electiva sociohumanística I,3,7,electivo,true
+41,1,ISIS703,Electiva de contexto I,3,7,electivo,true
+42,1,ISIS704,Electiva de profundización III,3,7,electivo,true
+43,1,ISIS705,Investigación de operaciones I,3,7,obligatorio,true
+44,1,ISIS706,Proyectos en ingeniería de sistemas I,2,7,obligatorio,true
+45,1,ISIS801,Dinámica de sistemas,3,8,obligatorio,true
+46,1,ISIS802,Electiva sociohumanística II,3,8,electivo,true
+47,1,ISIS803,Electiva de profundización IV,3,8,electivo,true
+48,1,ISIS804,Investigación de operaciones II,3,8,obligatorio,true
+49,1,ISIS805,Proyectos en ingeniería de sistemas II,4,8,obligatorio,true
+50,1,ISIS901,Electiva de contexto II,3,9,electivo,true
+51,1,ISIS902,Práctica en ingeniería de sistemas,12,9,obligatorio,true

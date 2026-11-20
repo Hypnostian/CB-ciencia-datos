@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Pipeline RAG</title>
+<style>
+  body { margin: 0; width: 1800px; height: 690px; background: #fff; font-family: "Segoe UI", Arial, sans-serif; color: #231B33; position: relative; }
+  .t { position: absolute; font-weight: 700; }
+  .c { position: absolute; width: 230px; height: 178px; border-radius: 16px; border: 2.5px solid; padding: 12px 14px; box-sizing: border-box; background: #fff; }
+  .c h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .c p { margin: 0; font-size: 13.4px; line-height: 1.35; }
+  .n { position: absolute; width: 30px; height: 30px; border-radius: 15px; color: #fff; font-weight: 700; text-align: center; line-height: 30px; font-size: 15px; }
+  .banda { position: absolute; left: 20px; width: 1760px; border-radius: 22px; }
+  svg { position: absolute; left: 0; top: 0; }
+</style></head><body>
+<div class="t" style="left:30px;top:16px;font-size:27px;color:#3F0A75">Pipeline RAG del asistente</div>
+<div class="t" style="left:30px;top:54px;font-size:14px;font-weight:400;color:#5B5670">Arriba, la indexación (se ejecuta una vez y cuando cambian los documentos: rag/ingesta.py o flujo 05). Abajo, la consulta (subflujo 01 de n8n en cada pregunta general).</div>
+
+<div class="banda" style="top:86px;height:278px;background:#F4F0FB"></div>
+<div class="t" style="left:40px;top:96px;font-size:16px;color:#7A1FD6">INDEXACIÓN</div>
+<div class="c" style="left:40px;top:128px;border-color:#4FA83D"><h3>1. Documentos oficiales</h3><p>Reglamento Estudiantil de Pregrado, 133 planes de estudio, plan oficial de Ing. de Sistemas (151 créditos), Centro de Competencias Digitales, matrícula, programa, profesores (APOLO)</p></div>
+<div class="c" style="left:330px;top:128px;border-color:#7A1FD6"><h3>2. Limpieza y metadatos</h3><p>Primera línea = URL de la fuente; título detectado; tipo (documento_oficial, plan_estudios, profesores). 145 documentos.</p></div>
+<div class="c" style="left:620px;top:128px;border-color:#7A1FD6"><h3>3. Fragmentación</h3><p>Por estructura (ARTÍCULO, CAPÍTULO, Semestre, títulos) y luego por tamaño: máx. <b>800 tokens</b> con <b>solape de 120</b>. Cada fragmento lleva su encabezado.</p></div>
+<div class="c" style="left:910px;top:128px;border-color:#2563EB"><h3>4. Embeddings</h3><p><b>gemini-embedding-001</b>, 768 dimensiones, taskType RETRIEVAL_DOCUMENT, vector normalizado (norma 1).</p></div>
+<div class="c" style="left:1200px;top:128px;border-color:#4FA83D"><h3>5. pgvector (Supabase)</h3><p>documentos y <b>documentos_fragmentos</b> (434) con embedding vector(768) e índice <b>HNSW</b> de distancia coseno.</p></div>
+<div class="c" style="left:1490px;top:128px;border-color:#5B5670;background:#FAFAFC"><h3>Comprobación</h3><p>rag/evaluar_chunks.py compara tamaños de fragmento y mide 25 preguntas contra el índice real; rag/consultar.py muestra lo que se recupera.</p></div>
+
+<div class="banda" style="top:385px;height:290px;background:#EEF5FF"></div>
+<div class="t" style="left:40px;top:395px;font-size:16px;color:#2563EB">CONSULTA (cada pregunta)</div>
+<div class="c" style="left:40px;top:427px;border-color:#F79800"><h3>A. Pregunta</h3><p>Llega desde la app al webhook; pasa los guardrails de entrada y el clasificador la envía al subflujo 01 (intención <i>general</i>).</p></div>
+<div class="c" style="left:330px;top:427px;border-color:#2563EB"><h3>B. Embedding de la pregunta</h3><p>Mismo modelo y dimensión, taskType <b>RETRIEVAL_QUERY</b>.</p></div>
+<div class="c" style="left:620px;top:427px;border-color:#4FA83D"><h3>C. Búsqueda semántica</h3><p><b>match_documentos(vector, 5)</b>: 5 fragmentos más cercanos por similitud coseno.</p></div>
+<div class="c" style="left:910px;top:427px;border-color:#7A1FD6"><h3>D. Filtro y contexto</h3><p>Se descartan los de similitud &lt; <b>0.35</b>; los demás forman el CONTEXTO con su título; las URLs pasan a <i>fuentes</i>.</p></div>
+<div class="c" style="left:1200px;top:427px;border-color:#7A1FD6"><h3>E. Agente RAG (Gemini)</h3><p>Responde <b>solo con el contexto</b> (máx. 180 palabras), con memoria de la sesión; si no hay contexto, lo dice y remite a unab.edu.co.</p></div>
+<div class="c" style="left:1490px;top:427px;border-color:#C2410C;background:#FFF4EC"><h3>F. Guardrails de salida</h3><p>Solo URLs de las fuentes recuperadas, sin datos de otro estudiante ni fugas; respuesta JSON con <i>fuentes</i> a la app.</p></div>
+
+<svg width="1800" height="690"><defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#231B33"/></marker></defs>
+<g stroke="#231B33" stroke-width="2.6" fill="none">
+  <path d="M272,217 L326,217" marker-end="url(#f)"/><path d="M562,217 L616,217" marker-end="url(#f)"/>
+  <path d="M852,217 L906,217" marker-end="url(#f)"/><path d="M1142,217 L1196,217" marker-end="url(#f)"/>
+  <path d="M1432,217 L1486,217" stroke-dasharray="6 5" marker-end="url(#f)"/>
+  <path d="M272,516 L326,516" marker-end="url(#f)"/><path d="M562,516 L616,516" marker-end="url(#f)"/>
+  <path d="M852,516 L906,516" marker-end="url(#f)"/><path d="M1142,516 L1196,516" marker-end="url(#f)"/>
+  <path d="M1432,516 L1486,516" marker-end="url(#f)"/>
+  <path d="M1315,306 L1315,355 L735,355 L735,423" stroke="#4FA83D" stroke-dasharray="7 5" marker-end="url(#f)"/>
+</g>
+<text x="760" y="377" font-size="13.5" font-weight="600" fill="#2F7A22">el índice de pgvector responde la búsqueda de cada pregunta</text>
+</svg>
+</body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Flujo 03: Agente académico con herramientas MCP</title><style>
+body{margin:0;width:1116px;height:556px;background:#F7F5FB;font-family:"Segoe UI",Arial,sans-serif;position:relative;
+background-image:radial-gradient(#DCD6E8 1.2px,transparent 1.2px);background-size:22px 22px}
+.n{position:absolute;width:176px;height:70px;background:#fff;border:2px solid;border-radius:12px;box-sizing:border-box;
+padding:7px 10px 0 16px;box-shadow:0 2px 5px rgba(0,0,0,.08)}
+.n b{display:block;font-size:13.5px;line-height:1.2;color:#231B33} .n span{font-size:11px;color:#6B6680}
+.n i{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:10px 0 0 10px}
+h1{position:absolute;left:24px;top:8px;margin:0;font-size:24px;color:#3F0A75} p.s{position:absolute;left:24px;top:44px;margin:0;font-size:13.5px;color:#5B5670}
+svg{position:absolute;left:0;top:0} .lab{font-size:11px;font-weight:600}
+</style></head><body><h1>Flujo 03: Agente académico con herramientas MCP</h1><p class="s">El agente usa Gemini, memoria en Postgres y las 14 herramientas del servidor MCP en AWS.</p>
+<svg width="1116" height="556"><defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#4A4458"/></marker></defs>
+<path d="M508.0,396 C508.0,356 658.0,246 658.0,208" stroke="#2563EB" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="514.0" y="388" fill="#2563EB">modelo</text>
+<path d="M708.0,396 C708.0,356 658.0,246 658.0,208" stroke="#9333EA" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="714.0" y="388" fill="#9333EA">memoria</text>
+<path d="M908.0,396 C908.0,356 658.0,246 658.0,208" stroke="#D97706" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="914.0" y="388" fill="#D97706">herramientas</text>
+<path d="M246,271.0 C286,271.0 270,271.0 308,271.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M486,271.0 C528.0,271.0 528.0,171.0 568,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M746,171.0 C808.0,171.0 808.0,171.0 868,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+</svg>
+<div class="n" style="left:70px;top:236px;border-color:#F79800"><i style="background:#F79800"></i><b>Entrada subflujo</b><span>Entrada de subflujo</span></div>
+<div class="n" style="left:310px;top:236px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Armar prompt</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:570px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Agente academico</b><span>AI Agent | reintenta x3</span></div>
+<div class="n" style="left:420px;top:396px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Agente academico modelo Gemini</b><span>Gemini Chat Model</span></div>
+<div class="n" style="left:620px;top:396px;border-color:#9333EA"><i style="background:#9333EA"></i><b>Agente academico memoria</b><span>Postgres Chat Memory</span></div>
+<div class="n" style="left:820px;top:396px;border-color:#D97706"><i style="background:#D97706"></i><b>Agente academico herramientas MCP</b><span>MCP Client Tool</span></div>
+<div class="n" style="left:870px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Formato de salida</b><span>Code (JavaScript)</span></div>
+</body></html>

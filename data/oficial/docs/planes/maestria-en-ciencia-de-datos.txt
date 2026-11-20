@@ -1,0 +1,22 @@
+Fuente: https://unab.edu.co/maestria-ciencia-datos-bucaramanga/
+Maestría en Ciencia de Datos
+Nivel: Posgrado (maestría). Modalidad: virtual.
+Total de créditos del programa: 36.
+
+Primer Semestre (12 créditos)
+- Analítica y ciclo de vida de los datos (3 créditos)
+- Aspectos generales de la ciencia de datos (2 créditos)
+- Estadística para la ciencia de datos (3 créditos)
+- Investigación para la innovación (2 créditos)
+- Liderazgo para el cambio (2 créditos)
+Segundo Semestre (12 créditos)
+- Aprendizaje automático avanzado (3 créditos)
+- Fundamentos y aplicaciones de la inteligencia artificial (3 créditos)
+- Investigación y necesidades del entorno (2 créditos)
+- Nuevos paradigmas de base de datos (2 créditos)
+- Solución creativa de problemas (2 créditos)
+Tercer Semestre (12 créditos)
+- Apropiación científica de la investigación (3 créditos)
+- Arquitectura de big data (3 créditos)
+- Electiva I (3 créditos)
+- Electiva II (3 créditos)

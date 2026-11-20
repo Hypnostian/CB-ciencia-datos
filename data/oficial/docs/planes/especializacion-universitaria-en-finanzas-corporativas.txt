@@ -1,0 +1,19 @@
+Fuente: https://unab.edu.co/programas/especializacion-universitaria-en-finanzas-corporativas/
+Especialización Universitaria en Finanzas Corporativas
+Nivel: Posgrado (especialización). Modalidad: presencial.
+Total de créditos del programa: 24.
+
+Primer Semestre (12 créditos)
+- Fundamentos de estadística para la ciencia de datos (2 créditos)
+- Inversiones corporativas (2 créditos)
+- Liderazgo para el cambio (2 créditos)
+- Matematicas financieras para la toma de decisiones (2 créditos)
+- Modelamiento financiero y generación de valor (2 créditos)
+- Proyecciones financieras corporativas (2 créditos)
+Segundo Semestre (12 créditos)
+- IA y machine learning para finanzas corporativas (2 créditos)
+- Inteligencia de negocios en finanzas corporativas (2 créditos)
+- Investigación para la innovación (2 créditos)
+- Módulo electivo (2 créditos)
+- Solución creativa de problemas (2 créditos)
+- Valoración y estructuración del capital (2 créditos)

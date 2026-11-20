@@ -1,0 +1,730 @@
+nrc,curso_id,periodo_id,docente,horario,cupo
+68175,1,2023-1,Isabel Acosta,Mar-Jue 07:00-09:00,40
+52567,1,2023-1,Janeth Arteaga,Mar-Jue 18:00-20:00,35
+39808,1,2023-2,Janeth Arteaga,Mar-Jue 18:00-20:00,40
+22613,1,2023-2,Jorge Díaz Delgado,Mar-Jue 07:00-09:00,35
+25923,1,2023-2,Carolina Ortiz Zapata,Lun-Mié 09:00-11:00,25
+86973,1,2024-1,Consuelo González,Mar-Jue 18:00-20:00,35
+68206,1,2024-1,Magdalena Romero Sánchez,Mar-Jue 11:00-13:00,30
+10656,1,2024-2,Carolina Ortiz Zapata,Lun-Mié 09:00-11:00,30
+91966,1,2024-2,Isabel Acosta,Lun-Mié 11:00-13:00,35
+93037,1,2024-2,Luis Mejía,Vie 07:00-11:00,40
+59956,1,2025-1,Lucila Ruiz,Vie 07:00-11:00,35
+29734,1,2025-1,Julio Camacho,Vie 07:00-11:00,40
+48730,1,2025-2,Flor Lizeth Camargo,Mar-Jue 14:00-16:00,30
+89759,1,2025-2,Cecilia Damaris Jaimes,Vie 07:00-11:00,35
+68236,1,2025-2,Alfonso Giraldo,Mar-Jue 18:00-20:00,30
+12659,1,2026-1,Carolina Ortiz Zapata,Mar-Jue 11:00-13:00,30
+43037,1,2026-1,Janeth Arteaga,Mar-Jue 11:00-13:00,40
+63439,1,2026-1,Luz Edith Cortés Jaramillo,Lun-Mié 07:00-09:00,35
+29350,1,2026-2,Lorena Vásquez,Vie 07:00-11:00,35
+50774,1,2026-2,Julián Roberto Sánchez Delgado,Mar-Jue 07:00-09:00,40
+79134,2,2023-1,Luz Luz Mosquera,Lun-Mié 18:00-20:00,35
+90346,2,2023-1,Luisa Herrera,Vie 14:00-18:00,35
+10521,2,2023-2,Isabel Acosta,Vie 07:00-11:00,30
+26668,2,2023-2,Agustín Hernández,Mar-Jue 11:00-13:00,40
+18849,2,2023-2,Isabel Acosta,Vie 14:00-18:00,35
+24828,2,2024-1,Julián Roberto Sánchez Delgado,Vie 14:00-18:00,40
+72667,2,2024-1,Flor Lizeth Camargo,Mar-Jue 18:00-20:00,25
+96787,2,2024-2,Danilo Mesa Torres,Lun-Mié 14:00-16:00,30
+75878,2,2024-2,José Blanco,Vie 14:00-18:00,40
+89600,2,2025-1,Carolina Ortiz Zapata,Mar-Jue 11:00-13:00,30
+30858,2,2025-1,Germán William Moreno Ávila,Lun-Mié 07:00-09:00,25
+71795,2,2025-1,Beatriz Ramírez Rodríguez,Lun-Mié 09:00-11:00,30
+97095,2,2025-2,Camilo Eduardo Castaño,Mar-Jue 14:00-16:00,35
+41805,2,2025-2,Luis Ernesto Bautista Ayala,Vie 07:00-11:00,25
+22725,2,2025-2,Iván Jaimes,Lun-Mié 14:00-16:00,35
+87320,2,2026-1,Agustín Hernández,Lun-Mié 09:00-11:00,25
+70055,2,2026-1,Felipe Brayan Zapata Mejía,Lun-Mié 18:00-20:00,30
+33005,2,2026-1,Jorge Ayala Martínez,Lun-Mié 18:00-20:00,40
+54898,2,2026-2,Luis Mejía,Lun-Mié 09:00-11:00,30
+13742,2,2026-2,Julián Roberto Sánchez Delgado,Mar-Jue 14:00-16:00,35
+11374,3,2023-1,Camilo Eduardo Castaño,Lun-Mié 09:00-11:00,35
+79632,3,2023-1,Danilo Mesa Torres,Lun-Mié 11:00-13:00,40
+50222,3,2023-2,Beatriz Ramírez Rodríguez,Vie 07:00-11:00,40
+33545,3,2023-2,Camilo Rodríguez,Lun-Mié 09:00-11:00,25
+84243,3,2023-2,Luz Edith Cortés Jaramillo,Mar-Jue 14:00-16:00,40
+99148,3,2024-1,Janeth Arteaga,Mar-Jue 14:00-16:00,25
+85530,3,2024-1,Janeth Arteaga,Mar-Jue 14:00-16:00,35
+98534,3,2024-2,Alfonso Roberto Escobar Castañeda,Mar-Jue 11:00-13:00,30
+87943,3,2024-2,Iván Palacio Sanabria,Lun-Mié 18:00-20:00,25
+49811,3,2025-1,Magdalena Romero Sánchez,Vie 07:00-11:00,30
+42080,3,2025-1,Iván Palacio Sanabria,Lun-Mié 09:00-11:00,35
+59445,3,2025-1,Carolina Ortiz Zapata,Lun-Mié 07:00-09:00,30
+25149,3,2025-2,Diego Cristian Meza Ospina,Mar-Jue 11:00-13:00,25
+41194,3,2025-2,Luz Luz Mosquera,Lun-Mié 14:00-16:00,35
+43068,3,2025-2,Amparo Blanca Camacho Hernández,Mar-Jue 11:00-13:00,25
+95234,3,2026-1,Esperanza María Jaimes,Mar-Jue 11:00-13:00,35
+12754,3,2026-1,Daniel Paz,Mar-Jue 18:00-20:00,30
+99345,3,2026-1,Julieth María Montoya,Mar-Jue 11:00-13:00,35
+20907,3,2026-2,Julián Roberto Sánchez Delgado,Vie 14:00-18:00,35
+56656,3,2026-2,Julieth María Montoya,Mar-Jue 14:00-16:00,35
+77149,4,2023-1,Marina Clara Burgos,Mar-Jue 07:00-09:00,30
+54382,4,2023-1,Magdalena Romero Sánchez,Mar-Jue 18:00-20:00,40
+84285,4,2023-1,Carolina Ortiz Zapata,Mar-Jue 09:00-11:00,35
+97927,4,2023-2,Enrique Jesús Valencia González,Lun-Mié 09:00-11:00,30
+64870,4,2023-2,Agustín Hernández,Lun-Mié 14:00-16:00,35
+92479,4,2023-2,Luz Luz Mosquera,Mar-Jue 09:00-11:00,25
+75276,4,2024-1,Isabel Luz Rodríguez,Lun-Mié 18:00-20:00,40
+21742,4,2024-1,Lucila Ruiz,Mar-Jue 14:00-16:00,40
+59747,4,2024-1,Luz Edith Cortés Jaramillo,Lun-Mié 09:00-11:00,35
+10197,4,2024-2,Luz Edith Cortés Jaramillo,Mar-Jue 14:00-16:00,35
+28177,4,2024-2,Katherine Adriana Cardona Rodríguez,Mar-Jue 11:00-13:00,35
+25121,4,2024-2,Agustín Hernández,Mar-Jue 09:00-11:00,40
+82104,4,2025-1,Diego Cristian Meza Ospina,Mar-Jue 14:00-16:00,25
+74877,4,2025-1,Germán William Moreno Ávila,Mar-Jue 11:00-13:00,40
+33030,4,2025-1,Alfonso Giraldo,Vie 14:00-18:00,25
+52256,4,2025-2,Julio Camacho,Vie 07:00-11:00,25
+29527,4,2025-2,Camilo Eduardo Castaño,Mar-Jue 09:00-11:00,40
+72175,4,2025-2,Diego Cristian Meza Ospina,Mar-Jue 11:00-13:00,35
+41877,4,2026-1,Agustín Hernández,Lun-Mié 14:00-16:00,30
+77740,4,2026-1,Alfonso Roberto Escobar Castañeda,Lun-Mié 09:00-11:00,30
+84303,4,2026-1,Cecilia Damaris Jaimes,Lun-Mié 07:00-09:00,35
+27077,4,2026-2,Beatriz Ramírez Rodríguez,Lun-Mié 18:00-20:00,25
+19740,4,2026-2,Elena María Palacio,Lun-Mié 11:00-13:00,25
+55132,4,2026-2,Iván Jaimes,Lun-Mié 14:00-16:00,25
+12482,5,2023-1,Beatriz Ramírez Rodríguez,Lun-Mié 09:00-11:00,40
+22113,5,2023-1,Alfonso Giraldo,Lun-Mié 11:00-13:00,40
+71356,5,2023-2,Elena María Palacio,Mar-Jue 11:00-13:00,35
+32140,5,2023-2,Julián Roberto Sánchez Delgado,Lun-Mié 18:00-20:00,40
+95927,5,2024-1,Alfonso Roberto Escobar Castañeda,Mar-Jue 11:00-13:00,35
+94690,5,2024-1,Carlos Alexander Orozco,Mar-Jue 07:00-09:00,30
+46559,5,2024-2,Magdalena Romero Sánchez,Lun-Mié 07:00-09:00,25
+62406,5,2024-2,Jorge Ayala Martínez,Vie 14:00-18:00,40
+54183,5,2024-2,Jorge Díaz Delgado,Mar-Jue 14:00-16:00,30
+76171,5,2025-1,Elena María Palacio,Lun-Mié 09:00-11:00,30
+36130,5,2025-1,Iván Palacio Sanabria,Lun-Mié 14:00-16:00,35
+83292,5,2025-2,Julieth María Montoya,Vie 14:00-18:00,30
+31573,5,2025-2,Consuelo González,Mar-Jue 09:00-11:00,30
+41049,5,2025-2,Luz Luz Mosquera,Mar-Jue 07:00-09:00,25
+32488,5,2026-1,Clara Fernanda Sánchez,Mar-Jue 14:00-16:00,40
+33392,5,2026-1,Amparo Blanca Camacho Hernández,Mar-Jue 09:00-11:00,40
+91596,5,2026-2,Agustín Hernández,Mar-Jue 09:00-11:00,25
+98456,5,2026-2,Edwin Cruz Moreno,Vie 07:00-11:00,30
+67820,6,2023-1,Felipe Brayan Zapata Mejía,Mar-Jue 07:00-09:00,25
+21714,6,2023-1,Enrique Jesús Valencia González,Vie 07:00-11:00,25
+82860,6,2023-2,Luz Luz Mosquera,Lun-Mié 14:00-16:00,40
+60572,6,2023-2,Julián Roberto Sánchez Delgado,Mar-Jue 09:00-11:00,30
+64199,6,2024-1,Carlos Alexander Orozco,Lun-Mié 14:00-16:00,35
+11983,6,2024-1,Luz Edith Cortés Jaramillo,Lun-Mié 09:00-11:00,40
+14121,6,2024-2,Laura Ana Hernández,Lun-Mié 18:00-20:00,40
+41757,6,2024-2,Germán William Moreno Ávila,Lun-Mié 14:00-16:00,30
+21463,6,2024-2,Cecilia Damaris Jaimes,Mar-Jue 09:00-11:00,40
+70820,6,2025-1,Luis Ernesto Bautista Ayala,Vie 14:00-18:00,30
+61508,6,2025-1,Lucila Ruiz,Mar-Jue 07:00-09:00,25
+80354,6,2025-2,Daniel Paz,Mar-Jue 18:00-20:00,35
+39923,6,2025-2,Jorge Díaz Delgado,Lun-Mié 18:00-20:00,25
+56138,6,2025-2,Enrique Jesús Valencia González,Lun-Mié 11:00-13:00,35
+80997,6,2026-1,Isabel Luz Rodríguez,Mar-Jue 18:00-20:00,25
+16976,6,2026-1,Consuelo González,Mar-Jue 07:00-09:00,25
+74915,6,2026-1,Diego Cristian Meza Ospina,Lun-Mié 18:00-20:00,40
+41193,6,2026-2,Jorge Díaz Delgado,Mar-Jue 09:00-11:00,35
+80807,6,2026-2,Enrique Jesús Valencia González,Lun-Mié 11:00-13:00,25
+86508,7,2023-1,Elena María Palacio,Mar-Jue 11:00-13:00,25
+77724,7,2023-1,Clara Fernanda Sánchez,Lun-Mié 18:00-20:00,30
+93321,7,2023-2,Alexander Miguel Pineda,Mar-Jue 09:00-11:00,30
+81755,7,2023-2,Alexander Miguel Pineda,Lun-Mié 18:00-20:00,35
+31967,7,2024-1,Diego Cristian Meza Ospina,Mar-Jue 14:00-16:00,40
+81634,7,2024-1,Luz Edith Cortés Jaramillo,Mar-Jue 09:00-11:00,30
+19346,7,2024-2,Flor Lizeth Camargo,Lun-Mié 18:00-20:00,40
+43992,7,2024-2,Luz Edith Cortés Jaramillo,Mar-Jue 14:00-16:00,40
+71785,7,2025-1,Luis Ernesto Bautista Ayala,Lun-Mié 18:00-20:00,35
+15715,7,2025-1,Germán William Moreno Ávila,Lun-Mié 14:00-16:00,35
+94718,7,2025-2,Isabel Luz Rodríguez,Vie 07:00-11:00,25
+90969,7,2025-2,Luis Ernesto Bautista Ayala,Lun-Mié 18:00-20:00,25
+47604,7,2025-2,Iván Palacio Sanabria,Mar-Jue 14:00-16:00,25
+10957,7,2026-1,Jorge Díaz Delgado,Lun-Mié 11:00-13:00,40
+36817,7,2026-1,Isabel Luz Rodríguez,Lun-Mié 09:00-11:00,35
+46585,7,2026-2,Diego Cristian Meza Ospina,Lun-Mié 09:00-11:00,30
+18586,7,2026-2,Iván Palacio Sanabria,Lun-Mié 14:00-16:00,30
+95441,8,2023-1,Consuelo González,Mar-Jue 14:00-16:00,25
+21939,8,2023-1,Camilo Eduardo Castaño,Lun-Mié 07:00-09:00,40
+48183,8,2023-1,Flor Lizeth Camargo,Lun-Mié 11:00-13:00,40
+16162,8,2023-2,Clara Fernanda Sánchez,Mar-Jue 18:00-20:00,35
+73105,8,2023-2,Cecilia Damaris Jaimes,Mar-Jue 07:00-09:00,40
+95354,8,2024-1,Iván Palacio Sanabria,Mar-Jue 11:00-13:00,40
+95253,8,2024-1,Clara Fernanda Sánchez,Lun-Mié 09:00-11:00,40
+34904,8,2024-1,Isabel Acosta,Mar-Jue 09:00-11:00,30
+14543,8,2024-2,Diego Cristian Meza Ospina,Mar-Jue 09:00-11:00,30
+92638,8,2024-2,Marco Acosta Martínez,Mar-Jue 18:00-20:00,35
+77566,8,2024-2,Julián Roberto Sánchez Delgado,Lun-Mié 09:00-11:00,30
+71207,8,2025-1,Cecilia Damaris Jaimes,Lun-Mié 09:00-11:00,40
+56618,8,2025-1,Cecilia Damaris Jaimes,Lun-Mié 14:00-16:00,30
+14662,8,2025-1,Enrique Jesús Valencia González,Vie 14:00-18:00,40
+97426,8,2025-2,Jorge Ayala Martínez,Lun-Mié 07:00-09:00,35
+82050,8,2025-2,Marco Acosta Martínez,Mar-Jue 07:00-09:00,25
+68641,8,2025-2,Luis Ernesto Bautista Ayala,Lun-Mié 07:00-09:00,35
+25163,8,2026-1,Felipe Brayan Zapata Mejía,Mar-Jue 18:00-20:00,25
+83707,8,2026-1,Isabel Acosta,Vie 07:00-11:00,40
+92691,8,2026-1,Marina Clara Burgos,Mar-Jue 09:00-11:00,40
+38646,8,2026-2,Camilo Eduardo Castaño,Mar-Jue 18:00-20:00,35
+14763,8,2026-2,Camilo Eduardo Castaño,Mar-Jue 18:00-20:00,25
+31971,9,2023-1,Danilo Mesa Torres,Mar-Jue 09:00-11:00,35
+21082,9,2023-1,Daniel Paz,Mar-Jue 07:00-09:00,35
+59052,9,2023-2,Luz Edith Cortés Jaramillo,Mar-Jue 07:00-09:00,30
+44916,9,2023-2,Katherine Adriana Cardona Rodríguez,Mar-Jue 07:00-09:00,40
+78776,9,2024-1,Jorge Ayala Martínez,Vie 07:00-11:00,25
+32150,9,2024-1,Julián Roberto Sánchez Delgado,Lun-Mié 11:00-13:00,35
+44429,9,2024-1,Edwin Cruz Moreno,Mar-Jue 11:00-13:00,25
+16699,9,2024-2,Isabel Luz Rodríguez,Lun-Mié 09:00-11:00,35
+35774,9,2024-2,Isabel Luz Rodríguez,Vie 07:00-11:00,25
+42022,9,2025-1,Amparo Blanca Camacho Hernández,Lun-Mié 07:00-09:00,25
+10756,9,2025-1,Magdalena Romero Sánchez,Lun-Mié 07:00-09:00,35
+62548,9,2025-2,Alexander Miguel Pineda,Lun-Mié 07:00-09:00,40
+64514,9,2025-2,Alfonso Roberto Escobar Castañeda,Lun-Mié 07:00-09:00,25
+23848,9,2026-1,Alfonso Roberto Escobar Castañeda,Lun-Mié 14:00-16:00,30
+24556,9,2026-1,José Blanco,Lun-Mié 14:00-16:00,30
+63136,9,2026-1,Alfonso Giraldo,Mar-Jue 09:00-11:00,40
+69937,9,2026-2,Clara Fernanda Sánchez,Lun-Mié 07:00-09:00,35
+32290,9,2026-2,Julieth María Montoya,Vie 07:00-11:00,40
+82700,10,2023-1,Luz Luz Mosquera,Vie 07:00-11:00,25
+19958,10,2023-1,Iván Jaimes,Mar-Jue 18:00-20:00,40
+86882,10,2023-1,Amparo Blanca Camacho Hernández,Lun-Mié 09:00-11:00,35
+38416,10,2023-2,Danilo Mesa Torres,Mar-Jue 09:00-11:00,25
+58298,10,2023-2,Ana Meza Giraldo,Lun-Mié 07:00-09:00,30
+83760,10,2023-2,Alexander Miguel Pineda,Lun-Mié 14:00-16:00,30
+26012,10,2024-1,Alfonso Roberto Escobar Castañeda,Mar-Jue 07:00-09:00,25
+79517,10,2024-1,Luis Ernesto Bautista Ayala,Lun-Mié 14:00-16:00,25
+31805,10,2024-2,Enrique Jesús Valencia González,Lun-Mié 11:00-13:00,40
+78158,10,2024-2,Clara Fernanda Sánchez,Mar-Jue 14:00-16:00,25
+88933,10,2025-1,José Blanco,Lun-Mié 09:00-11:00,35
+56329,10,2025-1,Flor Lizeth Camargo,Lun-Mié 11:00-13:00,30
+13446,10,2025-1,Alfonso Giraldo,Lun-Mié 09:00-11:00,30
+86066,10,2025-2,Janeth Arteaga,Lun-Mié 07:00-09:00,25
+66585,10,2025-2,Carlos Alexander Orozco,Vie 14:00-18:00,40
+45036,10,2025-2,Jorge Díaz Delgado,Lun-Mié 07:00-09:00,35
+51140,10,2026-1,Lorena Vásquez,Mar-Jue 18:00-20:00,30
+78334,10,2026-1,Laura Ana Hernández,Mar-Jue 18:00-20:00,30
+41593,10,2026-1,Consuelo González,Vie 14:00-18:00,25
+48623,10,2026-2,Clara Fernanda Sánchez,Mar-Jue 14:00-16:00,25
+28387,10,2026-2,Camilo Rodríguez,Mar-Jue 14:00-16:00,25
+71003,11,2023-1,Camilo Eduardo Castaño,Mar-Jue 09:00-11:00,25
+79407,11,2023-1,Camilo Rodríguez,Vie 14:00-18:00,25
+14461,11,2023-1,Elena María Palacio,Mar-Jue 14:00-16:00,25
+60426,11,2023-2,Jorge Díaz Delgado,Mar-Jue 09:00-11:00,35
+38647,11,2023-2,Diego Cristian Meza Ospina,Vie 07:00-11:00,35
+75399,11,2023-2,Alfonso Roberto Escobar Castañeda,Mar-Jue 11:00-13:00,40
+12142,11,2024-1,Felipe Brayan Zapata Mejía,Lun-Mié 09:00-11:00,40
+79456,11,2024-1,José Blanco,Mar-Jue 11:00-13:00,30
+73286,11,2024-2,Laura Ana Hernández,Mar-Jue 14:00-16:00,30
+60019,11,2024-2,Diego Cristian Meza Ospina,Vie 07:00-11:00,25
+87404,11,2024-2,Camilo Rodríguez,Mar-Jue 07:00-09:00,25
+72431,11,2025-1,Luz Edith Cortés Jaramillo,Lun-Mié 18:00-20:00,30
+87119,11,2025-1,Isabel Acosta,Mar-Jue 07:00-09:00,30
+24905,11,2025-1,Marina Clara Burgos,Mar-Jue 11:00-13:00,40
+34720,11,2025-2,Julieth María Montoya,Lun-Mié 11:00-13:00,25
+67478,11,2025-2,Luisa Herrera,Vie 14:00-18:00,30
+34154,11,2026-1,Julieth María Montoya,Mar-Jue 18:00-20:00,30
+88078,11,2026-1,Magdalena Romero Sánchez,Mar-Jue 18:00-20:00,35
+42665,11,2026-2,Luis Ernesto Bautista Ayala,Lun-Mié 11:00-13:00,25
+74088,11,2026-2,Marina Clara Burgos,Mar-Jue 07:00-09:00,30
+15411,12,2023-1,Carolina Ortiz Zapata,Vie 07:00-11:00,30
+64901,12,2023-1,Jorge Ayala Martínez,Mar-Jue 18:00-20:00,25
+50975,12,2023-1,Luz Edith Cortés Jaramillo,Vie 14:00-18:00,35
+77382,12,2023-2,Isabel Acosta,Lun-Mié 07:00-09:00,25
+41251,12,2023-2,Julio Camacho,Vie 07:00-11:00,40
+62433,12,2024-1,Enrique Jesús Valencia González,Lun-Mié 09:00-11:00,35
+41789,12,2024-1,Camilo Eduardo Castaño,Mar-Jue 14:00-16:00,25
+71429,12,2024-2,Daniel Paz,Lun-Mié 14:00-16:00,30
+52238,12,2024-2,Felipe Brayan Zapata Mejía,Lun-Mié 11:00-13:00,40
+41720,12,2025-1,Marina Clara Burgos,Mar-Jue 11:00-13:00,30
+71706,12,2025-1,Luis Mejía,Mar-Jue 14:00-16:00,30
+50243,12,2025-1,Jorge Ayala Martínez,Mar-Jue 11:00-13:00,25
+30084,12,2025-2,Beatriz Ramírez Rodríguez,Mar-Jue 18:00-20:00,40
+53897,12,2025-2,Luis Ernesto Bautista Ayala,Lun-Mié 09:00-11:00,30
+25686,12,2026-1,Clara Fernanda Sánchez,Vie 07:00-11:00,35
+78264,12,2026-1,Isabel Luz Rodríguez,Lun-Mié 07:00-09:00,40
+88899,12,2026-2,Alexander Miguel Pineda,Lun-Mié 11:00-13:00,30
+19322,12,2026-2,Consuelo González,Vie 07:00-11:00,40
+16054,13,2023-1,Lorena Vásquez,Mar-Jue 09:00-11:00,30
+12390,13,2023-1,Diego Cristian Meza Ospina,Lun-Mié 14:00-16:00,30
+43416,13,2023-1,José Blanco,Mar-Jue 07:00-09:00,40
+80093,13,2023-2,Esperanza María Jaimes,Lun-Mié 07:00-09:00,25
+32043,13,2023-2,Clara Fernanda Sánchez,Mar-Jue 18:00-20:00,35
+22040,13,2023-2,Camilo Eduardo Castaño,Lun-Mié 07:00-09:00,25
+61358,13,2024-1,Clara Fernanda Sánchez,Mar-Jue 18:00-20:00,40
+23782,13,2024-1,Amparo Blanca Camacho Hernández,Mar-Jue 18:00-20:00,40
+13484,13,2024-1,Amparo Blanca Camacho Hernández,Lun-Mié 18:00-20:00,25
+27605,13,2024-2,Edwin Cruz Moreno,Lun-Mié 14:00-16:00,30
+51735,13,2024-2,Luis Ernesto Bautista Ayala,Mar-Jue 09:00-11:00,25
+30067,13,2025-1,Felipe Brayan Zapata Mejía,Vie 07:00-11:00,35
+12879,13,2025-1,Alfonso Giraldo,Vie 14:00-18:00,40
+80881,13,2025-1,Julio Camacho,Lun-Mié 07:00-09:00,25
+72735,13,2025-2,Diego Cristian Meza Ospina,Lun-Mié 14:00-16:00,25
+90392,13,2025-2,Isabel Acosta,Lun-Mié 09:00-11:00,25
+69895,13,2025-2,Clara Fernanda Sánchez,Lun-Mié 18:00-20:00,25
+85363,13,2026-1,Cecilia Damaris Jaimes,Mar-Jue 09:00-11:00,25
+94602,13,2026-1,Carolina Ortiz Zapata,Lun-Mié 09:00-11:00,35
+60624,13,2026-2,Agustín Hernández,Mar-Jue 09:00-11:00,25
+24260,13,2026-2,Ana Meza Giraldo,Mar-Jue 07:00-09:00,30
+83974,14,2023-1,Camilo Eduardo Castaño,Vie 07:00-11:00,30
+69301,14,2023-1,Elena María Palacio,Lun-Mié 09:00-11:00,25
+79158,14,2023-2,Consuelo González,Vie 07:00-11:00,40
+19207,14,2024-1,Daniel Paz,Mar-Jue 09:00-11:00,30
+15488,14,2024-2,Marco Acosta Martínez,Lun-Mié 11:00-13:00,30
+87359,14,2025-1,Consuelo González,Mar-Jue 18:00-20:00,40
+20556,14,2025-2,José Blanco,Vie 07:00-11:00,40
+14879,14,2026-1,Isabel Luz Rodríguez,Lun-Mié 07:00-09:00,35
+48896,14,2026-1,Magdalena Romero Sánchez,Lun-Mié 07:00-09:00,35
+46191,14,2026-2,Carolina Ortiz Zapata,Mar-Jue 07:00-09:00,40
+22885,14,2026-2,Julieth María Montoya,Mar-Jue 18:00-20:00,35
+79508,15,2023-1,Luz Edith Cortés Jaramillo,Lun-Mié 11:00-13:00,35
+78864,15,2023-1,Camilo Rodríguez,Mar-Jue 14:00-16:00,40
+81578,15,2023-2,Amparo Blanca Camacho Hernández,Lun-Mié 18:00-20:00,30
+55343,15,2023-2,Lucila Ruiz,Lun-Mié 18:00-20:00,40
+71415,15,2024-1,Diego Cristian Meza Ospina,Mar-Jue 18:00-20:00,40
+70422,15,2024-1,Isabel Luz Rodríguez,Mar-Jue 11:00-13:00,25
+20332,15,2024-2,Marina Clara Burgos,Mar-Jue 14:00-16:00,25
+99394,15,2024-2,Daniel Paz,Vie 14:00-18:00,30
+43404,15,2025-1,Marco Acosta Martínez,Lun-Mié 07:00-09:00,35
+52762,15,2025-1,Felipe Brayan Zapata Mejía,Lun-Mié 07:00-09:00,35
+83425,15,2025-2,Germán William Moreno Ávila,Mar-Jue 14:00-16:00,25
+97821,15,2025-2,Katherine Adriana Cardona Rodríguez,Mar-Jue 11:00-13:00,25
+16322,15,2026-1,Iván Palacio Sanabria,Mar-Jue 07:00-09:00,30
+87730,15,2026-1,Daniel Paz,Lun-Mié 14:00-16:00,40
+92974,15,2026-2,Isabel Acosta,Vie 07:00-11:00,40
+89762,16,2023-1,Beatriz Ramírez Rodríguez,Lun-Mié 07:00-09:00,40
+59466,16,2023-1,Elena María Palacio,Mar-Jue 07:00-09:00,35
+69771,16,2023-2,Lorena Vásquez,Mar-Jue 07:00-09:00,25
+57054,16,2023-2,Danilo Mesa Torres,Mar-Jue 14:00-16:00,30
+39175,16,2024-1,Esperanza María Jaimes,Mar-Jue 11:00-13:00,30
+83354,16,2024-2,Iván Jaimes,Mar-Jue 11:00-13:00,25
+28873,16,2025-1,Felipe Brayan Zapata Mejía,Mar-Jue 11:00-13:00,40
+24085,16,2025-1,Flor Lizeth Camargo,Lun-Mié 09:00-11:00,40
+28081,16,2025-2,Julio Camacho,Lun-Mié 07:00-09:00,40
+73985,16,2025-2,Julián Roberto Sánchez Delgado,Vie 07:00-11:00,30
+56423,16,2026-1,Luisa Herrera,Lun-Mié 14:00-16:00,40
+45793,16,2026-2,Cecilia Damaris Jaimes,Lun-Mié 07:00-09:00,40
+70319,17,2023-1,Katherine Adriana Cardona Rodríguez,Mar-Jue 09:00-11:00,30
+78290,17,2023-1,Marco Acosta Martínez,Mar-Jue 18:00-20:00,40
+72465,17,2023-2,Camilo Eduardo Castaño,Lun-Mié 07:00-09:00,25
+11248,17,2024-1,Iván Jaimes,Lun-Mié 18:00-20:00,25
+62206,17,2024-1,Alexander Miguel Pineda,Lun-Mié 11:00-13:00,30
+57871,17,2024-2,Agustín Hernández,Mar-Jue 14:00-16:00,25
+47632,17,2025-1,Luis Ernesto Bautista Ayala,Mar-Jue 11:00-13:00,30
+45223,17,2025-2,Enrique Jesús Valencia González,Lun-Mié 11:00-13:00,40
+93135,17,2025-2,Julieth María Montoya,Lun-Mié 11:00-13:00,25
+94959,17,2026-1,Marco Acosta Martínez,Lun-Mié 11:00-13:00,35
+28989,17,2026-1,Edwin Cruz Moreno,Lun-Mié 14:00-16:00,25
+81683,17,2026-2,Janeth Arteaga,Mar-Jue 07:00-09:00,40
+13997,17,2026-2,Isabel Acosta,Mar-Jue 07:00-09:00,30
+66085,18,2023-1,Luis Ernesto Bautista Ayala,Lun-Mié 14:00-16:00,25
+34811,18,2023-2,Luz Luz Mosquera,Mar-Jue 14:00-16:00,40
+66831,18,2023-2,Janeth Arteaga,Vie 14:00-18:00,30
+94030,18,2024-1,Elena María Palacio,Lun-Mié 09:00-11:00,35
+36682,18,2024-2,Elena María Palacio,Mar-Jue 07:00-09:00,40
+32560,18,2025-1,Janeth Arteaga,Lun-Mié 11:00-13:00,35
+25092,18,2025-1,Cecilia Damaris Jaimes,Lun-Mié 09:00-11:00,25
+30718,18,2025-2,Consuelo González,Lun-Mié 11:00-13:00,25
+91551,18,2026-1,Marco Acosta Martínez,Mar-Jue 11:00-13:00,40
+99000,18,2026-2,Laura Ana Hernández,Lun-Mié 11:00-13:00,30
+56391,18,2026-2,Jorge Ayala Martínez,Lun-Mié 09:00-11:00,30
+20330,19,2023-1,Camilo Eduardo Castaño,Lun-Mié 11:00-13:00,35
+25185,19,2023-2,Ana Meza Giraldo,Mar-Jue 09:00-11:00,25
+35617,19,2023-2,Luisa Herrera,Lun-Mié 11:00-13:00,35
+37663,19,2024-1,Lucila Ruiz,Lun-Mié 11:00-13:00,25
+22027,19,2024-2,Elena María Palacio,Lun-Mié 11:00-13:00,35
+73151,19,2024-2,Isabel Acosta,Mar-Jue 09:00-11:00,40
+83271,19,2025-1,Jorge Díaz Delgado,Lun-Mié 09:00-11:00,40
+67734,19,2025-2,Consuelo González,Mar-Jue 07:00-09:00,35
+92489,19,2025-2,Carlos Alexander Orozco,Mar-Jue 11:00-13:00,25
+50462,19,2026-1,Marco Acosta Martínez,Mar-Jue 07:00-09:00,35
+37417,19,2026-1,Agustín Hernández,Lun-Mié 09:00-11:00,25
+57604,19,2026-2,Germán William Moreno Ávila,Vie 14:00-18:00,35
+70212,19,2026-2,Iván Jaimes,Lun-Mié 07:00-09:00,40
+65466,20,2023-1,Luis Ernesto Bautista Ayala,Vie 07:00-11:00,35
+65308,20,2023-1,Felipe Brayan Zapata Mejía,Mar-Jue 18:00-20:00,25
+80236,20,2023-2,Jorge Ayala Martínez,Lun-Mié 18:00-20:00,35
+30776,20,2024-1,Camilo Eduardo Castaño,Mar-Jue 07:00-09:00,25
+58804,20,2024-1,Agustín Hernández,Lun-Mié 09:00-11:00,30
+37880,20,2024-2,Amparo Blanca Camacho Hernández,Mar-Jue 09:00-11:00,40
+74822,20,2025-1,Diego Cristian Meza Ospina,Lun-Mié 18:00-20:00,25
+96720,20,2025-2,Jorge Ayala Martínez,Vie 07:00-11:00,25
+39445,20,2026-1,Luis Mejía,Mar-Jue 18:00-20:00,40
+41604,20,2026-1,Amparo Blanca Camacho Hernández,Lun-Mié 07:00-09:00,25
+32369,20,2026-2,Camilo Eduardo Castaño,Vie 14:00-18:00,35
+36140,21,2023-1,Diego Cristian Meza Ospina,Mar-Jue 07:00-09:00,40
+66771,21,2023-1,Amparo Blanca Camacho Hernández,Mar-Jue 09:00-11:00,25
+96953,21,2023-2,José Blanco,Mar-Jue 09:00-11:00,30
+65422,21,2023-2,Lucila Ruiz,Lun-Mié 18:00-20:00,30
+21803,21,2024-1,Alfonso Roberto Escobar Castañeda,Lun-Mié 18:00-20:00,30
+35077,21,2024-2,Elena María Palacio,Vie 14:00-18:00,25
+75963,21,2024-2,Luis Ernesto Bautista Ayala,Vie 14:00-18:00,30
+31470,21,2025-1,Julián Roberto Sánchez Delgado,Lun-Mié 18:00-20:00,25
+13681,21,2025-2,Laura Ana Hernández,Vie 14:00-18:00,35
+53092,21,2025-2,Danilo Mesa Torres,Lun-Mié 09:00-11:00,35
+43715,21,2026-1,Daniel Paz,Mar-Jue 14:00-16:00,30
+86809,21,2026-2,Luis Mejía,Mar-Jue 11:00-13:00,40
+56271,22,2023-1,Beatriz Ramírez Rodríguez,Mar-Jue 11:00-13:00,35
+22406,22,2023-1,Elena María Palacio,Lun-Mié 11:00-13:00,35
+17624,22,2023-2,Enrique Jesús Valencia González,Mar-Jue 07:00-09:00,25
+10991,22,2023-2,Felipe Brayan Zapata Mejía,Vie 14:00-18:00,35
+71713,22,2024-1,Marco Acosta Martínez,Mar-Jue 11:00-13:00,35
+15278,22,2024-2,Julieth María Montoya,Mar-Jue 09:00-11:00,40
+76615,22,2024-2,Marina Clara Burgos,Lun-Mié 11:00-13:00,35
+29090,22,2025-1,Julio Camacho,Mar-Jue 07:00-09:00,35
+52533,22,2025-2,Amparo Blanca Camacho Hernández,Vie 07:00-11:00,40
+30318,22,2025-2,Magdalena Romero Sánchez,Lun-Mié 14:00-16:00,35
+63319,22,2026-1,Luis Mejía,Mar-Jue 09:00-11:00,40
+99180,22,2026-2,Consuelo González,Mar-Jue 09:00-11:00,40
+71032,23,2023-1,Alexander Miguel Pineda,Mar-Jue 11:00-13:00,35
+22057,23,2023-1,Carolina Ortiz Zapata,Mar-Jue 11:00-13:00,40
+81138,23,2023-2,Luis Mejía,Mar-Jue 07:00-09:00,30
+57730,23,2024-1,Amparo Blanca Camacho Hernández,Mar-Jue 14:00-16:00,25
+77446,23,2024-2,Daniel Paz,Mar-Jue 18:00-20:00,25
+38958,23,2024-2,José Blanco,Mar-Jue 07:00-09:00,40
+49406,23,2025-1,Janeth Arteaga,Mar-Jue 11:00-13:00,30
+13802,23,2025-1,Luz Edith Cortés Jaramillo,Vie 07:00-11:00,40
+81574,23,2025-2,Julio Camacho,Lun-Mié 07:00-09:00,35
+74191,23,2026-1,Amparo Blanca Camacho Hernández,Vie 07:00-11:00,40
+91631,23,2026-1,Amparo Blanca Camacho Hernández,Lun-Mié 14:00-16:00,35
+94046,23,2026-2,Iván Palacio Sanabria,Vie 14:00-18:00,35
+64252,24,2023-1,Daniel Paz,Lun-Mié 09:00-11:00,35
+30171,24,2023-1,Clara Fernanda Sánchez,Vie 14:00-18:00,35
+99119,24,2023-2,Marco Acosta Martínez,Mar-Jue 11:00-13:00,25
+34331,24,2023-2,José Escobar,Lun-Mié 07:00-09:00,40
+17031,24,2024-1,Isabel Acosta,Mar-Jue 14:00-16:00,25
+34454,24,2024-1,José Blanco,Lun-Mié 11:00-13:00,35
+32058,24,2024-2,Isabel Luz Rodríguez,Mar-Jue 07:00-09:00,25
+69938,24,2024-2,Carolina Ortiz Zapata,Lun-Mié 11:00-13:00,25
+26775,24,2025-1,José Escobar,Mar-Jue 07:00-09:00,35
+56746,24,2025-2,Luisa Herrera,Mar-Jue 09:00-11:00,25
+80820,24,2026-1,Luz Edith Cortés Jaramillo,Mar-Jue 09:00-11:00,40
+45069,24,2026-2,Julio Camacho,Lun-Mié 09:00-11:00,40
+28243,24,2026-2,Isabel Acosta,Vie 07:00-11:00,40
+33460,25,2023-1,Katherine Adriana Cardona Rodríguez,Vie 14:00-18:00,40
+49235,25,2023-1,Luisa Herrera,Lun-Mié 09:00-11:00,40
+46748,25,2023-2,Julio Camacho,Lun-Mié 18:00-20:00,35
+14525,25,2023-2,Esperanza María Jaimes,Mar-Jue 14:00-16:00,35
+97378,25,2024-1,Iván Palacio Sanabria,Lun-Mié 07:00-09:00,35
+18005,25,2024-1,Germán William Moreno Ávila,Mar-Jue 07:00-09:00,30
+85096,25,2024-2,José Blanco,Lun-Mié 07:00-09:00,40
+96111,25,2024-2,José Escobar,Mar-Jue 09:00-11:00,30
+27204,25,2025-1,Isabel Luz Rodríguez,Lun-Mié 11:00-13:00,35
+28871,25,2025-2,Julieth María Montoya,Mar-Jue 14:00-16:00,25
+30068,25,2025-2,José Blanco,Mar-Jue 14:00-16:00,35
+82261,25,2026-1,Iván Jaimes,Lun-Mié 18:00-20:00,35
+89530,25,2026-2,Clara Fernanda Sánchez,Lun-Mié 11:00-13:00,25
+29921,26,2023-1,Katherine Adriana Cardona Rodríguez,Lun-Mié 09:00-11:00,40
+34779,26,2023-2,Camilo Rodríguez,Vie 14:00-18:00,25
+90640,26,2024-1,Esperanza María Jaimes,Mar-Jue 14:00-16:00,35
+79822,26,2024-2,Esperanza María Jaimes,Vie 07:00-11:00,25
+61380,26,2025-1,José Blanco,Mar-Jue 14:00-16:00,35
+95311,26,2025-1,Luz Luz Mosquera,Mar-Jue 07:00-09:00,35
+57676,26,2025-2,Laura Ana Hernández,Lun-Mié 09:00-11:00,25
+52698,26,2025-2,Camilo Eduardo Castaño,Mar-Jue 11:00-13:00,30
+98931,26,2026-1,Marina Clara Burgos,Mar-Jue 18:00-20:00,30
+83254,26,2026-2,Janeth Arteaga,Lun-Mié 09:00-11:00,40
+27918,27,2023-1,Esperanza María Jaimes,Lun-Mié 09:00-11:00,35
+74039,27,2023-1,Consuelo González,Mar-Jue 09:00-11:00,25
+45478,27,2023-2,Esperanza María Jaimes,Vie 14:00-18:00,30
+37692,27,2024-1,Luis Ernesto Bautista Ayala,Vie 07:00-11:00,40
+77329,27,2024-1,Clara Fernanda Sánchez,Mar-Jue 11:00-13:00,40
+26578,27,2024-2,Luz Luz Mosquera,Mar-Jue 07:00-09:00,40
+79019,27,2024-2,Amparo Blanca Camacho Hernández,Mar-Jue 07:00-09:00,40
+76589,27,2025-1,Camilo Rodríguez,Lun-Mié 14:00-16:00,25
+66228,27,2025-2,Edwin Cruz Moreno,Mar-Jue 09:00-11:00,30
+37481,27,2026-1,Jorge Díaz Delgado,Lun-Mié 09:00-11:00,30
+41574,27,2026-1,Cecilia Damaris Jaimes,Mar-Jue 18:00-20:00,40
+70792,27,2026-2,Diego Cristian Meza Ospina,Lun-Mié 07:00-09:00,35
+13784,27,2026-2,Daniel Paz,Lun-Mié 07:00-09:00,40
+38159,28,2023-1,Cecilia Damaris Jaimes,Vie 07:00-11:00,30
+89869,28,2023-1,Enrique Jesús Valencia González,Lun-Mié 14:00-16:00,25
+23941,28,2023-2,Consuelo González,Lun-Mié 14:00-16:00,35
+92646,28,2023-2,Katherine Adriana Cardona Rodríguez,Lun-Mié 09:00-11:00,30
+60178,28,2024-1,Luis Ernesto Bautista Ayala,Mar-Jue 07:00-09:00,35
+78228,28,2024-2,Elena María Palacio,Mar-Jue 07:00-09:00,25
+79205,28,2024-2,Esperanza María Jaimes,Vie 07:00-11:00,40
+43749,28,2025-1,Carolina Ortiz Zapata,Lun-Mié 18:00-20:00,40
+32852,28,2025-1,Amparo Blanca Camacho Hernández,Lun-Mié 11:00-13:00,35
+83668,28,2025-2,Alexander Miguel Pineda,Mar-Jue 18:00-20:00,35
+20232,28,2026-1,Isabel Luz Rodríguez,Mar-Jue 09:00-11:00,25
+33745,28,2026-2,Luz Edith Cortés Jaramillo,Lun-Mié 18:00-20:00,40
+57196,29,2023-1,Isabel Luz Rodríguez,Vie 14:00-18:00,35
+54513,29,2023-2,Flor Lizeth Camargo,Mar-Jue 18:00-20:00,25
+96580,29,2024-1,Jorge Díaz Delgado,Lun-Mié 09:00-11:00,25
+51672,29,2024-2,Carlos Alexander Orozco,Vie 07:00-11:00,40
+74124,29,2024-2,Flor Lizeth Camargo,Mar-Jue 18:00-20:00,35
+52611,29,2025-1,Alexander Miguel Pineda,Mar-Jue 09:00-11:00,35
+88096,29,2025-1,Ana Meza Giraldo,Lun-Mié 18:00-20:00,30
+78477,29,2025-2,Alexander Miguel Pineda,Lun-Mié 18:00-20:00,25
+76798,29,2026-1,Amparo Blanca Camacho Hernández,Mar-Jue 07:00-09:00,40
+21890,29,2026-1,Esperanza María Jaimes,Mar-Jue 09:00-11:00,35
+90794,29,2026-2,Cecilia Damaris Jaimes,Mar-Jue 18:00-20:00,30
+73254,29,2026-2,Consuelo González,Mar-Jue 07:00-09:00,30
+49138,30,2023-1,Carolina Ortiz Zapata,Lun-Mié 11:00-13:00,40
+79765,30,2023-2,Diego Cristian Meza Ospina,Vie 14:00-18:00,25
+99398,30,2023-2,Julieth María Montoya,Vie 14:00-18:00,30
+76710,30,2024-1,Danilo Mesa Torres,Vie 07:00-11:00,35
+96659,30,2024-2,Agustín Hernández,Mar-Jue 09:00-11:00,25
+94601,30,2025-1,Camilo Eduardo Castaño,Vie 14:00-18:00,30
+18461,30,2025-1,Carlos Alexander Orozco,Mar-Jue 14:00-16:00,35
+63852,30,2025-2,Daniel Paz,Mar-Jue 09:00-11:00,35
+17102,30,2025-2,Julián Roberto Sánchez Delgado,Lun-Mié 14:00-16:00,35
+86250,30,2026-1,José Blanco,Mar-Jue 07:00-09:00,35
+38612,30,2026-1,Luisa Herrera,Mar-Jue 09:00-11:00,25
+49854,30,2026-2,Marco Acosta Martínez,Mar-Jue 09:00-11:00,30
+62419,30,2026-2,Marina Clara Burgos,Vie 14:00-18:00,30
+77147,31,2023-1,Jorge Ayala Martínez,Lun-Mié 07:00-09:00,30
+45865,31,2023-2,Ana Meza Giraldo,Lun-Mié 18:00-20:00,30
+58174,31,2023-2,Luz Luz Mosquera,Vie 07:00-11:00,40
+36048,31,2024-1,Agustín Hernández,Lun-Mié 18:00-20:00,30
+71094,31,2024-2,Germán William Moreno Ávila,Lun-Mié 11:00-13:00,40
+43272,31,2024-2,José Escobar,Lun-Mié 07:00-09:00,35
+57996,31,2025-1,Julieth María Montoya,Mar-Jue 11:00-13:00,25
+73003,31,2025-1,Esperanza María Jaimes,Mar-Jue 18:00-20:00,25
+12853,31,2025-2,Marina Clara Burgos,Lun-Mié 18:00-20:00,40
+27463,31,2026-1,Camilo Eduardo Castaño,Lun-Mié 11:00-13:00,35
+74225,31,2026-1,Danilo Mesa Torres,Vie 14:00-18:00,30
+94357,31,2026-2,Jorge Díaz Delgado,Mar-Jue 09:00-11:00,30
+14812,31,2026-2,Jorge Ayala Martínez,Lun-Mié 07:00-09:00,40
+42781,32,2023-1,Alexander Miguel Pineda,Vie 07:00-11:00,25
+52864,32,2023-2,Julio Camacho,Mar-Jue 11:00-13:00,30
+74004,32,2024-1,Jorge Ayala Martínez,Lun-Mié 14:00-16:00,30
+43469,32,2024-1,Iván Jaimes,Mar-Jue 07:00-09:00,35
+72874,32,2024-2,Carolina Ortiz Zapata,Mar-Jue 14:00-16:00,35
+89509,32,2024-2,Daniel Paz,Mar-Jue 11:00-13:00,25
+51657,32,2025-1,Consuelo González,Lun-Mié 09:00-11:00,25
+55536,32,2025-1,Elena María Palacio,Mar-Jue 18:00-20:00,25
+55030,32,2025-2,Carolina Ortiz Zapata,Mar-Jue 11:00-13:00,25
+54730,32,2025-2,Edwin Cruz Moreno,Lun-Mié 18:00-20:00,30
+96907,32,2026-1,Felipe Brayan Zapata Mejía,Lun-Mié 09:00-11:00,35
+96230,32,2026-2,Amparo Blanca Camacho Hernández,Mar-Jue 11:00-13:00,35
+71704,33,2023-1,Isabel Luz Rodríguez,Mar-Jue 14:00-16:00,35
+40324,33,2023-1,Luisa Herrera,Lun-Mié 11:00-13:00,40
+77295,33,2023-2,Germán William Moreno Ávila,Vie 07:00-11:00,25
+82120,33,2024-1,Julio Camacho,Vie 14:00-18:00,30
+34282,33,2024-1,Julieth María Montoya,Lun-Mié 14:00-16:00,30
+15829,33,2024-2,Janeth Arteaga,Mar-Jue 14:00-16:00,25
+64989,33,2025-1,Daniel Paz,Lun-Mié 09:00-11:00,40
+45504,33,2025-2,José Blanco,Lun-Mié 07:00-09:00,40
+13709,33,2025-2,Alfonso Roberto Escobar Castañeda,Lun-Mié 09:00-11:00,40
+24163,33,2026-1,Jorge Díaz Delgado,Mar-Jue 11:00-13:00,35
+27465,33,2026-1,Edwin Cruz Moreno,Mar-Jue 14:00-16:00,40
+83289,33,2026-2,José Blanco,Mar-Jue 11:00-13:00,25
+87209,34,2023-1,Marina Clara Burgos,Mar-Jue 14:00-16:00,40
+99278,34,2023-1,Magdalena Romero Sánchez,Lun-Mié 07:00-09:00,30
+78393,34,2023-2,Camilo Rodríguez,Lun-Mié 14:00-16:00,40
+64662,34,2023-2,Esperanza María Jaimes,Mar-Jue 18:00-20:00,40
+84399,34,2024-1,Alfonso Giraldo,Lun-Mié 11:00-13:00,40
+21047,34,2024-1,Luz Edith Cortés Jaramillo,Vie 07:00-11:00,30
+50559,34,2024-2,Felipe Brayan Zapata Mejía,Mar-Jue 07:00-09:00,40
+32384,34,2024-2,Edwin Cruz Moreno,Lun-Mié 09:00-11:00,35
+98230,34,2025-1,José Blanco,Mar-Jue 14:00-16:00,30
+89440,34,2025-1,Consuelo González,Lun-Mié 18:00-20:00,30
+37049,34,2025-2,Elena María Palacio,Lun-Mié 18:00-20:00,30
+70747,34,2025-2,Iván Palacio Sanabria,Lun-Mié 18:00-20:00,40
+38757,34,2026-1,Agustín Hernández,Mar-Jue 07:00-09:00,35
+53251,34,2026-2,Beatriz Ramírez Rodríguez,Vie 07:00-11:00,25
+30424,34,2026-2,Camilo Eduardo Castaño,Vie 07:00-11:00,30
+22529,35,2023-1,Beatriz Ramírez Rodríguez,Mar-Jue 14:00-16:00,30
+11493,35,2023-2,Esperanza María Jaimes,Mar-Jue 07:00-09:00,25
+80642,35,2024-1,Katherine Adriana Cardona Rodríguez,Lun-Mié 09:00-11:00,35
+34596,35,2024-1,Consuelo González,Lun-Mié 11:00-13:00,25
+82845,35,2024-2,Luisa Herrera,Vie 07:00-11:00,40
+20353,35,2024-2,Alexander Miguel Pineda,Mar-Jue 14:00-16:00,35
+58422,35,2025-1,Luz Luz Mosquera,Lun-Mié 18:00-20:00,30
+92597,35,2025-1,Luis Mejía,Mar-Jue 18:00-20:00,25
+91635,35,2025-2,Daniel Paz,Mar-Jue 11:00-13:00,40
+46295,35,2025-2,Flor Lizeth Camargo,Lun-Mié 09:00-11:00,30
+77494,35,2026-1,Luz Edith Cortés Jaramillo,Lun-Mié 11:00-13:00,35
+69917,35,2026-1,Flor Lizeth Camargo,Lun-Mié 18:00-20:00,35
+37423,35,2026-2,Esperanza María Jaimes,Lun-Mié 09:00-11:00,40
+12331,35,2026-2,Enrique Jesús Valencia González,Mar-Jue 14:00-16:00,30
+52809,36,2023-1,Alfonso Giraldo,Lun-Mié 07:00-09:00,25
+45211,36,2023-1,Camilo Rodríguez,Lun-Mié 07:00-09:00,30
+96596,36,2023-2,Isabel Acosta,Lun-Mié 11:00-13:00,40
+25838,36,2023-2,Lorena Vásquez,Mar-Jue 14:00-16:00,30
+93397,36,2024-1,Janeth Arteaga,Lun-Mié 18:00-20:00,40
+38818,36,2024-1,Isabel Luz Rodríguez,Mar-Jue 11:00-13:00,40
+14914,36,2024-2,Isabel Acosta,Vie 14:00-18:00,40
+11540,36,2025-1,Amparo Blanca Camacho Hernández,Mar-Jue 11:00-13:00,35
+54400,36,2025-2,Katherine Adriana Cardona Rodríguez,Vie 07:00-11:00,35
+73296,36,2026-1,Lucila Ruiz,Vie 14:00-18:00,30
+72382,36,2026-2,Katherine Adriana Cardona Rodríguez,Mar-Jue 18:00-20:00,40
+64345,36,2026-2,Elena María Palacio,Vie 14:00-18:00,40
+90178,37,2023-1,Camilo Rodríguez,Mar-Jue 07:00-09:00,35
+94458,37,2023-2,Alfonso Giraldo,Mar-Jue 07:00-09:00,40
+85884,37,2024-1,Julián Roberto Sánchez Delgado,Mar-Jue 07:00-09:00,25
+53779,37,2024-2,Julián Roberto Sánchez Delgado,Lun-Mié 11:00-13:00,40
+27117,37,2024-2,Lorena Vásquez,Mar-Jue 09:00-11:00,35
+43052,37,2025-1,Enrique Jesús Valencia González,Lun-Mié 14:00-16:00,40
+83258,37,2025-2,Enrique Jesús Valencia González,Lun-Mié 07:00-09:00,30
+45003,37,2025-2,Flor Lizeth Camargo,Lun-Mié 11:00-13:00,25
+11378,37,2026-1,Alfonso Giraldo,Mar-Jue 14:00-16:00,40
+32671,37,2026-1,Danilo Mesa Torres,Vie 07:00-11:00,40
+62397,37,2026-2,Consuelo González,Mar-Jue 09:00-11:00,25
+17868,37,2026-2,Luz Luz Mosquera,Vie 14:00-18:00,25
+53312,38,2023-1,Jorge Díaz Delgado,Lun-Mié 07:00-09:00,40
+56158,38,2023-1,Iván Jaimes,Lun-Mié 09:00-11:00,30
+65631,38,2023-2,Felipe Brayan Zapata Mejía,Lun-Mié 07:00-09:00,35
+37513,38,2023-2,Lorena Vásquez,Lun-Mié 18:00-20:00,40
+77723,38,2024-1,Isabel Luz Rodríguez,Lun-Mié 11:00-13:00,30
+81619,38,2024-2,Luz Luz Mosquera,Lun-Mié 11:00-13:00,35
+97507,38,2024-2,Katherine Adriana Cardona Rodríguez,Lun-Mié 11:00-13:00,25
+92966,38,2025-1,Luis Mejía,Lun-Mié 07:00-09:00,40
+98893,38,2025-1,Julián Roberto Sánchez Delgado,Vie 07:00-11:00,40
+74839,38,2025-2,Felipe Brayan Zapata Mejía,Mar-Jue 18:00-20:00,35
+99020,38,2025-2,Katherine Adriana Cardona Rodríguez,Lun-Mié 18:00-20:00,30
+22452,38,2026-1,Luz Luz Mosquera,Mar-Jue 09:00-11:00,30
+54149,38,2026-1,Camilo Rodríguez,Lun-Mié 11:00-13:00,35
+63694,38,2026-2,Luis Ernesto Bautista Ayala,Mar-Jue 07:00-09:00,30
+98357,39,2023-1,Ana Meza Giraldo,Vie 14:00-18:00,40
+53144,39,2023-1,Iván Palacio Sanabria,Lun-Mié 07:00-09:00,35
+82054,39,2023-2,Elena María Palacio,Lun-Mié 14:00-16:00,25
+12846,39,2024-1,Carlos Alexander Orozco,Lun-Mié 09:00-11:00,40
+62356,39,2024-1,Julio Camacho,Lun-Mié 14:00-16:00,35
+62591,39,2024-2,José Escobar,Lun-Mié 09:00-11:00,40
+92993,39,2024-2,Cecilia Damaris Jaimes,Lun-Mié 09:00-11:00,25
+70039,39,2025-1,José Escobar,Lun-Mié 09:00-11:00,25
+85286,39,2025-1,Danilo Mesa Torres,Mar-Jue 09:00-11:00,30
+48465,39,2025-2,Jorge Díaz Delgado,Vie 07:00-11:00,40
+45115,39,2025-2,Germán William Moreno Ávila,Lun-Mié 14:00-16:00,25
+26152,39,2026-1,Flor Lizeth Camargo,Lun-Mié 07:00-09:00,30
+83570,39,2026-2,Luis Ernesto Bautista Ayala,Mar-Jue 18:00-20:00,40
+28804,39,2026-2,Germán William Moreno Ávila,Mar-Jue 14:00-16:00,35
+53485,40,2023-1,Julio Camacho,Lun-Mié 09:00-11:00,25
+40709,40,2023-1,Luz Luz Mosquera,Lun-Mié 09:00-11:00,25
+45150,40,2023-2,Alfonso Giraldo,Lun-Mié 11:00-13:00,30
+92165,40,2024-1,Alfonso Giraldo,Vie 14:00-18:00,30
+81449,40,2024-2,Iván Palacio Sanabria,Mar-Jue 09:00-11:00,35
+29052,40,2025-1,José Blanco,Lun-Mié 09:00-11:00,30
+44553,40,2025-1,Danilo Mesa Torres,Mar-Jue 14:00-16:00,40
+68254,40,2025-2,Julio Camacho,Mar-Jue 18:00-20:00,40
+44924,40,2026-1,Alfonso Giraldo,Mar-Jue 18:00-20:00,35
+51947,40,2026-2,Danilo Mesa Torres,Lun-Mié 14:00-16:00,25
+25446,40,2026-2,Isabel Luz Rodríguez,Lun-Mié 09:00-11:00,25
+53119,41,2023-1,Enrique Jesús Valencia González,Lun-Mié 14:00-16:00,30
+45078,41,2023-1,Janeth Arteaga,Mar-Jue 11:00-13:00,25
+66530,41,2023-2,Ana Meza Giraldo,Lun-Mié 11:00-13:00,25
+26722,41,2024-1,Luis Ernesto Bautista Ayala,Lun-Mié 07:00-09:00,40
+96093,41,2024-2,Iván Palacio Sanabria,Lun-Mié 09:00-11:00,30
+84261,41,2024-2,Agustín Hernández,Lun-Mié 18:00-20:00,35
+67890,41,2025-1,Katherine Adriana Cardona Rodríguez,Lun-Mié 18:00-20:00,30
+30234,41,2025-1,Magdalena Romero Sánchez,Lun-Mié 11:00-13:00,30
+37902,41,2025-2,Alexander Miguel Pineda,Mar-Jue 14:00-16:00,25
+60020,41,2025-2,Ana Meza Giraldo,Mar-Jue 07:00-09:00,40
+87314,41,2026-1,Janeth Arteaga,Mar-Jue 11:00-13:00,25
+63700,41,2026-1,Camilo Rodríguez,Mar-Jue 11:00-13:00,35
+55888,41,2026-2,Diego Cristian Meza Ospina,Vie 14:00-18:00,25
+55684,42,2023-1,Luisa Herrera,Lun-Mié 18:00-20:00,25
+38858,42,2023-2,Edwin Cruz Moreno,Mar-Jue 18:00-20:00,40
+70687,42,2024-1,Alfonso Giraldo,Lun-Mié 14:00-16:00,30
+35753,42,2024-2,Luis Mejía,Vie 07:00-11:00,30
+33166,42,2024-2,Luis Mejía,Lun-Mié 11:00-13:00,40
+51114,42,2025-1,Isabel Acosta,Mar-Jue 18:00-20:00,30
+62831,42,2025-2,Laura Ana Hernández,Lun-Mié 11:00-13:00,35
+74643,42,2026-1,Alfonso Giraldo,Lun-Mié 07:00-09:00,30
+96120,42,2026-2,Marina Clara Burgos,Vie 14:00-18:00,30
+52296,42,2026-2,Elena María Palacio,Mar-Jue 07:00-09:00,30
+53478,43,2023-1,Edwin Cruz Moreno,Lun-Mié 14:00-16:00,25
+83606,43,2023-2,Esperanza María Jaimes,Mar-Jue 14:00-16:00,40
+76358,43,2024-1,Beatriz Ramírez Rodríguez,Lun-Mié 07:00-09:00,30
+66701,43,2024-2,Janeth Arteaga,Mar-Jue 18:00-20:00,40
+52598,43,2024-2,Camilo Eduardo Castaño,Vie 14:00-18:00,35
+32064,43,2025-1,Alfonso Roberto Escobar Castañeda,Vie 14:00-18:00,35
+39628,43,2025-2,Carlos Alexander Orozco,Lun-Mié 09:00-11:00,25
+96783,43,2025-2,Ana Meza Giraldo,Lun-Mié 09:00-11:00,40
+44773,43,2026-1,Luz Luz Mosquera,Lun-Mié 11:00-13:00,35
+50897,43,2026-1,Diego Cristian Meza Ospina,Lun-Mié 07:00-09:00,25
+74856,43,2026-2,Iván Jaimes,Mar-Jue 14:00-16:00,30
+21516,43,2026-2,Beatriz Ramírez Rodríguez,Mar-Jue 11:00-13:00,25
+19048,44,2023-1,Cecilia Damaris Jaimes,Lun-Mié 18:00-20:00,25
+20819,44,2023-2,Isabel Luz Rodríguez,Vie 07:00-11:00,35
+55235,44,2024-1,Flor Lizeth Camargo,Mar-Jue 09:00-11:00,35
+86718,44,2024-1,Luis Ernesto Bautista Ayala,Lun-Mié 09:00-11:00,35
+69760,44,2024-2,Alfonso Roberto Escobar Castañeda,Vie 07:00-11:00,30
+99592,44,2024-2,Edwin Cruz Moreno,Lun-Mié 07:00-09:00,30
+57012,44,2025-1,Daniel Paz,Lun-Mié 18:00-20:00,35
+42378,44,2025-1,Lucila Ruiz,Lun-Mié 09:00-11:00,25
+78019,44,2025-2,José Blanco,Lun-Mié 07:00-09:00,25
+82822,44,2026-1,Jorge Díaz Delgado,Vie 07:00-11:00,35
+25851,44,2026-1,Laura Ana Hernández,Vie 14:00-18:00,30
+75372,44,2026-2,Elena María Palacio,Lun-Mié 07:00-09:00,35
+72178,45,2023-1,Julieth María Montoya,Lun-Mié 07:00-09:00,35
+55586,45,2023-2,Felipe Brayan Zapata Mejía,Mar-Jue 18:00-20:00,25
+25407,45,2024-1,Katherine Adriana Cardona Rodríguez,Lun-Mié 09:00-11:00,40
+94875,45,2024-2,Carlos Alexander Orozco,Lun-Mié 07:00-09:00,25
+49517,45,2024-2,Danilo Mesa Torres,Lun-Mié 18:00-20:00,35
+90865,45,2025-1,Julieth María Montoya,Mar-Jue 07:00-09:00,30
+44415,45,2025-1,Agustín Hernández,Lun-Mié 14:00-16:00,35
+59964,45,2025-2,Jorge Ayala Martínez,Mar-Jue 11:00-13:00,35
+19585,45,2026-1,Germán William Moreno Ávila,Lun-Mié 11:00-13:00,35
+24076,45,2026-2,Jorge Ayala Martínez,Lun-Mié 07:00-09:00,35
+73512,45,2026-2,Daniel Paz,Lun-Mié 14:00-16:00,40
+52767,46,2023-1,Isabel Acosta,Lun-Mié 11:00-13:00,25
+23928,46,2023-1,Alfonso Roberto Escobar Castañeda,Lun-Mié 09:00-11:00,25
+26583,46,2023-2,Julián Roberto Sánchez Delgado,Mar-Jue 14:00-16:00,35
+42526,46,2024-1,Alfonso Giraldo,Mar-Jue 14:00-16:00,25
+89956,46,2024-2,Magdalena Romero Sánchez,Lun-Mié 18:00-20:00,25
+88577,46,2025-1,Luz Luz Mosquera,Lun-Mié 14:00-16:00,40
+30214,46,2025-1,Lorena Vásquez,Lun-Mié 09:00-11:00,25
+79747,46,2025-2,Janeth Arteaga,Lun-Mié 11:00-13:00,40
+38336,46,2026-1,Jorge Ayala Martínez,Lun-Mié 11:00-13:00,30
+49668,46,2026-2,Marina Clara Burgos,Mar-Jue 09:00-11:00,35
+58234,46,2026-2,Katherine Adriana Cardona Rodríguez,Lun-Mié 07:00-09:00,35
+18336,47,2023-1,Carlos Alexander Orozco,Vie 14:00-18:00,30
+59093,47,2023-1,Luis Mejía,Lun-Mié 09:00-11:00,30
+10261,47,2023-2,Clara Fernanda Sánchez,Vie 14:00-18:00,25
+94332,47,2024-1,Luz Luz Mosquera,Lun-Mié 18:00-20:00,30
+97517,47,2024-2,Edwin Cruz Moreno,Mar-Jue 18:00-20:00,35
+77501,47,2024-2,Alfonso Giraldo,Lun-Mié 18:00-20:00,25
+25295,47,2025-1,Lorena Vásquez,Mar-Jue 09:00-11:00,30
+31487,47,2025-1,Isabel Luz Rodríguez,Lun-Mié 07:00-09:00,40
+28972,47,2025-2,Camilo Eduardo Castaño,Lun-Mié 14:00-16:00,30
+80660,47,2025-2,Edwin Cruz Moreno,Vie 14:00-18:00,40
+51244,47,2026-1,Luz Luz Mosquera,Mar-Jue 11:00-13:00,40
+33543,47,2026-1,Katherine Adriana Cardona Rodríguez,Vie 14:00-18:00,35
+13868,47,2026-2,Jorge Ayala Martínez,Vie 14:00-18:00,35
+77658,48,2023-1,Elena María Palacio,Lun-Mié 14:00-16:00,30
+32398,48,2023-1,Camilo Eduardo Castaño,Mar-Jue 18:00-20:00,25
+80434,48,2023-2,Jorge Ayala Martínez,Lun-Mié 11:00-13:00,35
+56616,48,2023-2,José Blanco,Mar-Jue 09:00-11:00,35
+65397,48,2024-1,Lorena Vásquez,Lun-Mié 07:00-09:00,25
+72916,48,2024-2,Alfonso Giraldo,Lun-Mié 14:00-16:00,35
+94906,48,2025-1,Edwin Cruz Moreno,Vie 14:00-18:00,30
+89423,48,2025-1,Felipe Brayan Zapata Mejía,Lun-Mié 11:00-13:00,40
+11238,48,2025-2,Alfonso Giraldo,Mar-Jue 14:00-16:00,40
+92551,48,2025-2,Janeth Arteaga,Lun-Mié 14:00-16:00,35
+34732,48,2026-1,Alexander Miguel Pineda,Mar-Jue 09:00-11:00,25
+60936,48,2026-1,Enrique Jesús Valencia González,Mar-Jue 18:00-20:00,30
+27564,48,2026-2,Felipe Brayan Zapata Mejía,Vie 14:00-18:00,40
+56821,49,2023-1,Luz Luz Mosquera,Mar-Jue 18:00-20:00,25
+47431,49,2023-1,Alfonso Giraldo,Lun-Mié 14:00-16:00,35
+80931,49,2023-2,Jorge Díaz Delgado,Mar-Jue 09:00-11:00,25
+48704,49,2024-1,Carlos Alexander Orozco,Vie 07:00-11:00,25
+48392,49,2024-2,Iván Palacio Sanabria,Lun-Mié 18:00-20:00,25
+31261,49,2024-2,Danilo Mesa Torres,Mar-Jue 11:00-13:00,30
+34874,49,2025-1,Germán William Moreno Ávila,Mar-Jue 07:00-09:00,40
+96804,49,2025-1,Carlos Alexander Orozco,Lun-Mié 18:00-20:00,40
+87689,49,2025-2,Marco Acosta Martínez,Lun-Mié 18:00-20:00,40
+15451,49,2025-2,Camilo Rodríguez,Lun-Mié 09:00-11:00,30
+50687,49,2026-1,Germán William Moreno Ávila,Lun-Mié 09:00-11:00,40
+44267,49,2026-2,Iván Jaimes,Mar-Jue 14:00-16:00,40
+81760,50,2023-1,Agustín Hernández,Mar-Jue 09:00-11:00,30
+53726,50,2023-1,Iván Jaimes,Mar-Jue 09:00-11:00,25
+61014,50,2023-2,Alfonso Roberto Escobar Castañeda,Lun-Mié 14:00-16:00,30
+28598,50,2023-2,Luis Mejía,Lun-Mié 18:00-20:00,40
+21211,50,2024-1,Flor Lizeth Camargo,Lun-Mié 14:00-16:00,40
+23752,50,2024-1,Enrique Jesús Valencia González,Vie 07:00-11:00,30
+76684,50,2024-2,Jorge Díaz Delgado,Mar-Jue 11:00-13:00,35
+30715,50,2025-1,Elena María Palacio,Lun-Mié 11:00-13:00,40
+96739,50,2025-2,Germán William Moreno Ávila,Mar-Jue 11:00-13:00,25
+94416,50,2025-2,Luz Edith Cortés Jaramillo,Lun-Mié 14:00-16:00,35
+77711,50,2026-1,Luz Luz Mosquera,Lun-Mié 07:00-09:00,30
+80645,50,2026-1,Consuelo González,Mar-Jue 14:00-16:00,30
+59883,50,2026-2,Luz Edith Cortés Jaramillo,Lun-Mié 09:00-11:00,30
+61547,50,2026-2,Beatriz Ramírez Rodríguez,Mar-Jue 14:00-16:00,35
+15851,51,2023-1,Amparo Blanca Camacho Hernández,Lun-Mié 07:00-09:00,35
+85055,51,2023-1,Carolina Ortiz Zapata,Mar-Jue 07:00-09:00,25
+50201,51,2023-2,José Blanco,Vie 07:00-11:00,35
+86334,51,2023-2,Felipe Brayan Zapata Mejía,Lun-Mié 18:00-20:00,30
+38458,51,2024-1,Julieth María Montoya,Mar-Jue 09:00-11:00,30
+79915,51,2024-2,Laura Ana Hernández,Vie 07:00-11:00,30
+12405,51,2024-2,Magdalena Romero Sánchez,Lun-Mié 11:00-13:00,30
+23205,51,2025-1,Lucila Ruiz,Lun-Mié 14:00-16:00,25
+28082,51,2025-1,Alfonso Roberto Escobar Castañeda,Vie 14:00-18:00,35
+44736,51,2025-2,Luisa Herrera,Lun-Mié 09:00-11:00,40
+81660,51,2026-1,Magdalena Romero Sánchez,Lun-Mié 11:00-13:00,40
+58862,51,2026-2,Flor Lizeth Camargo,Lun-Mié 11:00-13:00,25
+49195,51,2026-2,Iván Jaimes,Lun-Mié 11:00-13:00,25

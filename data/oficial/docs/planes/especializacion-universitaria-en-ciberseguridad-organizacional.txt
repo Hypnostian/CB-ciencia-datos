@@ -1,0 +1,19 @@
+Fuente: https://unab.edu.co/programas/especializacion-universitaria-en-ciberseguridad-organizacional/
+Especialización Universitaria en Ciberseguridad Organizacional
+Nivel: Posgrado (especialización). Modalidad: presencial.
+Total de créditos del programa: 22.
+
+Primer Semestre (11 créditos)
+- Electiva I (2 créditos)
+- Fundamentos en ciberseguridad (2 créditos)
+- Liderazgo para el cambio (2 créditos)
+- Seminario I (1 crédito)
+- Solución creativa de problemas (2 créditos)
+- Tecnologías de información (2 créditos)
+Segundo Semestre (11 créditos)
+- Amenazas informáticas (2 créditos)
+- Electiva II (2 créditos)
+- Gestión de seguridad de la información (2 créditos)
+- Marco regulatorio en ciberseguridad (2 créditos)
+- Seminario II (1 crédito)
+- Tendencias en ciberseguridad (2 créditos)

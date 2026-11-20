@@ -1,0 +1,66 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Flujo 00: Chat principal</title><style>
+body{margin:0;width:2736px;height:1226px;background:#F7F5FB;font-family:"Segoe UI",Arial,sans-serif;position:relative;
+background-image:radial-gradient(#DCD6E8 1.2px,transparent 1.2px);background-size:22px 22px}
+.n{position:absolute;width:176px;height:70px;background:#fff;border:2px solid;border-radius:12px;box-sizing:border-box;
+padding:7px 10px 0 16px;box-shadow:0 2px 5px rgba(0,0,0,.08)}
+.n b{display:block;font-size:13.5px;line-height:1.2;color:#231B33} .n span{font-size:11px;color:#6B6680}
+.n i{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:10px 0 0 10px}
+h1{position:absolute;left:24px;top:8px;margin:0;font-size:24px;color:#3F0A75} p.s{position:absolute;left:24px;top:44px;margin:0;font-size:13.5px;color:#5B5670}
+svg{position:absolute;left:0;top:0} .lab{font-size:11px;font-weight:600}
+</style></head><body><h1>Flujo 00: Chat principal</h1><p class="s">Webhook de la app, guardrails, clasificación con Gemini, ruteo a los subflujos y acciones directas (perfil, noticias).</p>
+<svg width="2736" height="1226"><defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#4A4458"/></marker></defs>
+<path d="M246,501.0 L264,501.0 L264,501.0 L288,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M466,501.0 L484,501.0 L484,501.0 L508,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M686,501.0 L704,501.0 L704,501.0 L728,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M906,489.3333333333333 L924,489.3333333333333 L924,501.0 L948,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="912" y="485.3333333333333" fill="#00809F">sí</text>
+<path d="M906,512.6666666666666 L936,512.6666666666666 L936,971.0 L2488,971.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="912" y="508.66666666666663" fill="#00809F">no</text>
+<path d="M1346,501.0 L1364,501.0 L1364,501.0 L1388,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M1566,501.0 L1584,501.0 L1584,501.0 L1608,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M1786,476.0 L1804,476.0 L1804,171.0 L1968,171.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1810" y="165.0" fill="#00809F">general</text>
+<path d="M1786,486.0 L1816,486.0 L1816,301.0 L1968,301.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1822" y="295.0" fill="#00809F">calendario</text>
+<path d="M1786,496.0 L1828,496.0 L1828,431.0 L1968,431.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1834" y="425.0" fill="#00809F">cursos</text>
+<path d="M1786,506.0 L1840,506.0 L1840,561.0 L1968,561.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1846" y="555.0" fill="#00809F">matricula</text>
+<path d="M1786,516.0 L1852,516.0 L1852,691.0 L1968,691.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1858" y="685.0" fill="#00809F">noticias</text>
+<path d="M1786,526.0 L1864,526.0 L1864,821.0 L1968,821.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1870" y="815.0" fill="#00809F">otro</text>
+<path d="M2146,171.0 L2164,171.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,301.0 L2164,301.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,431.0 L2164,431.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,561.0 L2164,561.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,691.0 L2164,691.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,821.0 L2164,821.0 L2164,501.0 L2248,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2426,501.0 L2444,501.0 L2444,971.0 L2488,971.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M1126,489.3333333333333 L1144,489.3333333333333 L1144,1101.0 L1168,1101.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1132" y="485.3333333333333" fill="#00809F">sí</text>
+<path d="M1126,512.6666666666666 L1156,512.6666666666666 L1156,501.0 L1168,501.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<text class="lab" x="1132" y="508.66666666666663" fill="#00809F">no</text>
+<path d="M1346,1101.0 L1364,1101.0 L1364,1101.0 L1968,1101.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+<path d="M2146,1101.0 L2164,1101.0 L2164,971.0 L2488,971.0" stroke="#4A4458" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f)"/>
+</svg>
+<div class="n" style="left:70px;top:466px;border-color:#F79800"><i style="background:#F79800"></i><b>Webhook chat</b><span>Webhook</span></div>
+<div class="n" style="left:290px;top:466px;border-color:#5B5670"><i style="background:#5B5670"></i><b>Config</b><span>Set</span></div>
+<div class="n" style="left:510px;top:466px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Guardrails de entrada</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:730px;top:466px;border-color:#00A3CC"><i style="background:#00A3CC"></i><b>Entrada valida</b><span>If</span></div>
+<div class="n" style="left:1170px;top:466px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Clasificar intencion</b><span>HTTP Request | reintenta x2, continúa si falla</span></div>
+<div class="n" style="left:1390px;top:466px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Parsear intencion</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:1610px;top:466px;border-color:#00A3CC"><i style="background:#00A3CC"></i><b>Ruteo por intencion</b><span>Switch</span></div>
+<div class="n" style="left:1970px;top:136px;border-color:#C2410C"><i style="background:#C2410C"></i><b>Subflujo 01 RAG</b><span>Execute Workflow | continúa si falla</span></div>
+<div class="n" style="left:1970px;top:266px;border-color:#C2410C"><i style="background:#C2410C"></i><b>Subflujo 02 Calendario</b><span>Execute Workflow | continúa si falla</span></div>
+<div class="n" style="left:1970px;top:396px;border-color:#C2410C"><i style="background:#C2410C"></i><b>Subflujo 03 Cursos</b><span>Execute Workflow | continúa si falla</span></div>
+<div class="n" style="left:1970px;top:526px;border-color:#C2410C"><i style="background:#C2410C"></i><b>Subflujo 03 Matricula</b><span>Execute Workflow | continúa si falla</span></div>
+<div class="n" style="left:1970px;top:656px;border-color:#C2410C"><i style="background:#C2410C"></i><b>Subflujo 04 Noticias</b><span>Execute Workflow | continúa si falla</span></div>
+<div class="n" style="left:1970px;top:786px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Respuesta fuera de tema</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:2250px;top:466px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Guardrails de salida</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:2490px;top:936px;border-color:#F79800"><i style="background:#F79800"></i><b>Responder</b><span>Respond to Webhook</span></div>
+<div class="n" style="left:950px;top:466px;border-color:#00A3CC"><i style="background:#00A3CC"></i><b>Es accion directa</b><span>If</span></div>
+<div class="n" style="left:1170px;top:1066px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Consultar servidor MCP</b><span>HTTP Request</span></div>
+<div class="n" style="left:1970px;top:1066px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Respuesta directa</b><span>Code (JavaScript)</span></div>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Flujo 04: Scraper y agente de noticias</title><style>
+body{margin:0;width:1296px;height:716px;background:#F7F5FB;font-family:"Segoe UI",Arial,sans-serif;position:relative;
+background-image:radial-gradient(#DCD6E8 1.2px,transparent 1.2px);background-size:22px 22px}
+.n{position:absolute;width:176px;height:70px;background:#fff;border:2px solid;border-radius:12px;box-sizing:border-box;
+padding:7px 10px 0 16px;box-shadow:0 2px 5px rgba(0,0,0,.08)}
+.n b{display:block;font-size:13.5px;line-height:1.2;color:#231B33} .n span{font-size:11px;color:#6B6680}
+.n i{position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:10px 0 0 10px}
+h1{position:absolute;left:24px;top:8px;margin:0;font-size:24px;color:#3F0A75} p.s{position:absolute;left:24px;top:44px;margin:0;font-size:13.5px;color:#5B5670}
+svg{position:absolute;left:0;top:0} .lab{font-size:11px;font-weight:600}
+</style></head><body><h1>Flujo 04: Scraper y agente de noticias</h1><p class="s">Arriba, el scraper automático cada 6 horas (7 fuentes). Abajo, la respuesta con las noticias de hoy primero.</p>
+<svg width="1296" height="716"><defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#4A4458"/></marker></defs>
+<path d="M906,171.0 C946,171.0 910,171.0 948,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M708.0,556 C708.0,516 858.0,446 858.0,408" stroke="#2563EB" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="714.0" y="548" fill="#2563EB">modelo</text>
+<path d="M908.0,556 C908.0,516 858.0,446 858.0,408" stroke="#9333EA" stroke-width="2.2" stroke-dasharray="6 4" fill="none"/>
+<text class="lab" x="914.0" y="548" fill="#9333EA">memoria</text>
+<path d="M246,431.0 C286,431.0 270,431.0 308,431.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M486,431.0 C526,431.0 490,431.0 528,431.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M706,431.0 C746,431.0 730,371.0 768,371.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M946,371.0 C998.0,371.0 998.0,371.0 1048,371.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M246,171.0 C286,171.0 250,171.0 288,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M466,171.0 C506,171.0 470,171.0 508,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+<path d="M686,171.0 C726,171.0 690,171.0 728,171.0" stroke="#4A4458" stroke-width="2" fill="none" marker-end="url(#f)"/>
+</svg>
+<div class="n" style="left:70px;top:136px;border-color:#F79800"><i style="background:#F79800"></i><b>Cada 6 horas</b><span>Schedule Trigger</span></div>
+<div class="n" style="left:290px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Fuentes de noticias</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:510px;top:136px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Descargar fuente</b><span>HTTP Request | reintenta x2, continúa si falla</span></div>
+<div class="n" style="left:730px;top:136px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Normalizar noticias</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:950px;top:136px;border-color:#4FA83D"><i style="background:#4FA83D"></i><b>Upsert en noticias</b><span>Postgres (Supabase)</span></div>
+<div class="n" style="left:70px;top:396px;border-color:#F79800"><i style="background:#F79800"></i><b>Entrada subflujo</b><span>Entrada de subflujo</span></div>
+<div class="n" style="left:310px;top:396px;border-color:#4FA83D"><i style="background:#4FA83D"></i><b>Ultimas noticias</b><span>Postgres (Supabase)</span></div>
+<div class="n" style="left:530px;top:396px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Armar prompt</b><span>Code (JavaScript)</span></div>
+<div class="n" style="left:770px;top:336px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Agente noticias</b><span>AI Agent | reintenta x3</span></div>
+<div class="n" style="left:620px;top:556px;border-color:#2563EB"><i style="background:#2563EB"></i><b>Agente noticias modelo Gemini</b><span>Gemini Chat Model</span></div>
+<div class="n" style="left:820px;top:556px;border-color:#9333EA"><i style="background:#9333EA"></i><b>Agente noticias memoria</b><span>Postgres Chat Memory</span></div>
+<div class="n" style="left:1050px;top:336px;border-color:#7A1FD6"><i style="background:#7A1FD6"></i><b>Formato de salida</b><span>Code (JavaScript)</span></div>
+</body></html>

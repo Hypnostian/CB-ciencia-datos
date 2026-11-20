@@ -1,0 +1,16 @@
+[
+  {
+    "codigo": "U00179643",
+    "nombres": "Juan Sebastián",
+    "apellidos": "Lizcano Jaimes",
+    "perfil": "normal",
+    "ingreso": "2023-2",
+    "nota": "Autor del proyecto. Solo el nombre es real; notas, horario y demás datos académicos son sintéticos."
+  },
+  {
+    "codigo": "U00179961",
+    "nombres": "Angie Katherine",
+    "apellidos": "Suarez Ortiz",
+    "nota": "Solo el nombre es real; notas, horario y demás datos académicos son sintéticos."
+  }
+]

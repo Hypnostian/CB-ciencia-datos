@@ -1,0 +1,25 @@
+# Despliegue del servidor MCP (FastMCP) en una instancia EC2 Ubuntu.
+# Uso (desde la carpeta infra/, con un archivo .env junto a este):
+#   docker compose -f docker-compose.ec2.yml up -d --build
+services:
+  mcp-server:
+    build:
+      context: ../mcp-server
+    container_name: cb-mcp-server
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MCP_PORT: "9000"
+    ports:
+      - "9000:9000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import socket; socket.create_connection(('127.0.0.1', 9000), 3)\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

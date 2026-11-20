@@ -1,0 +1,121 @@
+codigo,nombres,apellidos,correo,programa_id,semestre_actual,estado,fecha_ingreso
+U00112519,John,López Díaz,u00112519@demo.unab.local,1,8,activo,2023-01-26
+U00134229,José,Gaviria Bravo,u00134229@demo.unab.local,1,8,activo,2023-01-26
+U00164401,Steven,Herrera Guzmán,u00164401@demo.unab.local,1,8,activo,2023-01-26
+U00200594,Astrid María,Sepúlveda Méndez,u00200594@demo.unab.local,1,8,activo,2023-01-26
+U00202523,Antonio Andrés,Torres Palacios,u00202523@demo.unab.local,1,8,activo,2023-01-26
+U00336493,Carlos,Sarmiento Bohórquez,u00336493@demo.unab.local,1,8,activo,2023-01-26
+U00341836,Sonia,Mosquera Angulo,u00341836@demo.unab.local,1,8,activo,2023-01-26
+U00445499,Julio Fernando,Prieto Rivera,u00445499@demo.unab.local,1,4,inactivo,2023-01-26
+U00481471,Miguel,Cruz Arrieta,u00481471@demo.unab.local,1,8,activo,2023-01-26
+U00500468,Yésica,Gil Álvarez,u00500468@demo.unab.local,1,8,activo,2023-01-26
+U00574412,Carlos,Peña Reyes,u00574412@demo.unab.local,1,8,activo,2023-01-26
+U00576097,María Gloria,Pedraza Guzmán,u00576097@demo.unab.local,1,8,activo,2023-01-26
+U00708242,Diego José,Pérez Jiménez,u00708242@demo.unab.local,1,8,activo,2023-01-26
+U00734248,Iván,Ortiz Forero,u00734248@demo.unab.local,1,8,activo,2023-01-26
+U00776660,Luz Yesenia,Lozano Gaitán,u00776660@demo.unab.local,1,8,activo,2023-01-26
+U00812986,Erika,Suárez Gómez,u00812986@demo.unab.local,1,8,activo,2023-01-26
+U00822962,Jhon,Montoya Domínguez,u00822962@demo.unab.local,1,3,inactivo,2023-01-26
+U00925000,Eliecer Álvaro,Paz López,u00925000@demo.unab.local,1,8,activo,2023-01-26
+U00997518,Carlos,Giraldo Vásquez,u00997518@demo.unab.local,1,8,activo,2023-01-26
+U00100002,Jesús,Daza Durán,u00100002@demo.unab.local,1,7,activo,2023-08-03
+U00100003,Juan,Maldonado Jiménez,u00100003@demo.unab.local,1,7,activo,2023-08-03
+U00131912,Jorge,Hernández Giraldo,u00131912@demo.unab.local,1,7,activo,2023-08-03
+U00192361,Yenifer,Méndez Sanabria,u00192361@demo.unab.local,1,7,activo,2023-08-03
+U00196177,Augusto,Rico Mosquera,u00196177@demo.unab.local,1,7,activo,2023-08-03
+U00417287,Hugo Alexis,Pardo Montoya,u00417287@demo.unab.local,1,7,activo,2023-08-03
+U00492257,Nelson,Gómez Álvarez,u00492257@demo.unab.local,1,7,activo,2023-08-03
+U00548042,Carlos,Gómez González,u00548042@demo.unab.local,1,7,activo,2023-08-03
+U00591006,Nelly Dayana,Castañeda Sepúlveda,u00591006@demo.unab.local,1,7,activo,2023-08-03
+U00602413,Andrés,Suárez Lozano,u00602413@demo.unab.local,1,7,activo,2023-08-03
+U00703466,Francisco Antonio,López Valencia,u00703466@demo.unab.local,1,7,activo,2023-08-03
+U00775914,Luis,Velasco García,u00775914@demo.unab.local,1,2,inactivo,2023-08-03
+U00848753,Marcela,Suárez González,u00848753@demo.unab.local,1,7,activo,2023-08-03
+U00897166,Leidy,Sierra Cortés,u00897166@demo.unab.local,1,7,activo,2023-08-03
+U00969010,Antonio Manuel,Aguilar Prada,u00969010@demo.unab.local,1,7,activo,2023-08-03
+U00138198,Javier Andrés,Obando Montes,u00138198@demo.unab.local,1,6,activo,2024-01-26
+U00142271,Alexis,Ortiz Durán,u00142271@demo.unab.local,1,6,activo,2024-01-26
+U00223137,Juan,Mejía Londoño,u00223137@demo.unab.local,1,6,activo,2024-01-26
+U00233800,Alexander,Burbano Navarro,u00233800@demo.unab.local,1,6,activo,2024-01-26
+U00381142,Esther Lucía,Ramírez Restrepo,u00381142@demo.unab.local,1,6,activo,2024-01-26
+U00476977,Milton,Villegas Uribe,u00476977@demo.unab.local,1,6,activo,2024-01-26
+U00498098,Javier Albeiro,Fernández Rojas,u00498098@demo.unab.local,1,6,activo,2024-01-26
+U00511944,Óscar Julián,Galvis Mejía,u00511944@demo.unab.local,1,6,activo,2024-01-26
+U00543707,Claudia,González Ortiz,u00543707@demo.unab.local,1,6,activo,2024-01-26
+U00544200,Milton Fernando,Vásquez Ortiz,u00544200@demo.unab.local,1,3,inactivo,2024-01-26
+U00581446,Claudia,Sánchez Perdomo,u00581446@demo.unab.local,1,6,activo,2024-01-26
+U00590706,Marcela,Córdoba Barrera,u00590706@demo.unab.local,1,6,activo,2024-01-26
+U00610704,Alejandra,Caicedo Valencia,u00610704@demo.unab.local,1,6,activo,2024-01-26
+U00688837,Adriana,López Castañeda,u00688837@demo.unab.local,1,6,activo,2024-01-26
+U00763296,Esther Ruth,Barrera Sepúlveda,u00763296@demo.unab.local,1,6,activo,2024-01-26
+U00797804,Alonso,Delgado Salazar,u00797804@demo.unab.local,1,6,activo,2024-01-26
+U00829993,Camila María,Castillo Pérez,u00829993@demo.unab.local,1,6,activo,2024-01-26
+U00859290,Marcela,Narváez Hernández,u00859290@demo.unab.local,1,6,activo,2024-01-26
+U00969963,Fabián Mario,Roa Meneses,u00969963@demo.unab.local,1,6,activo,2024-01-26
+U00100001,Manuela Daniela,Rodríguez Uribe,u00100001@demo.unab.local,1,5,activo,2024-08-03
+U00138993,Yolanda Sofía,Valderrama Valencia,u00138993@demo.unab.local,1,5,activo,2024-08-03
+U00144753,Sara,Mercado Molina,u00144753@demo.unab.local,1,5,activo,2024-08-03
+U00161211,Edwin Manuel,Cortés Díaz,u00161211@demo.unab.local,1,5,activo,2024-08-03
+U00234525,Hugo,Riascos Sánchez,u00234525@demo.unab.local,1,5,activo,2024-08-03
+U00258224,Emerson Jhonny,Rojas Sandoval,u00258224@demo.unab.local,1,5,activo,2024-08-03
+U00403717,Hernando,García Guerrero,u00403717@demo.unab.local,1,5,activo,2024-08-03
+U00434977,Beatriz,Fernández Hernández,u00434977@demo.unab.local,1,5,activo,2024-08-03
+U00439446,María,Rico Gómez,u00439446@demo.unab.local,1,5,activo,2024-08-03
+U00566775,Esperanza,Molina Moreno,u00566775@demo.unab.local,1,5,activo,2024-08-03
+U00568941,Gilma,Ortega Vergara,u00568941@demo.unab.local,1,5,activo,2024-08-03
+U00703041,Carolina,Ruiz Acosta,u00703041@demo.unab.local,1,5,activo,2024-08-03
+U00720884,Mauricio,Valencia Vargas,u00720884@demo.unab.local,1,5,activo,2024-08-03
+U00815505,Paula,Hernández Ramos,u00815505@demo.unab.local,1,5,activo,2024-08-03
+U00894225,Rosa,Perea Correa,u00894225@demo.unab.local,1,5,activo,2024-08-03
+U00228881,Rosa Rocío,Ardila Suárez,u00228881@demo.unab.local,1,4,activo,2025-01-26
+U00259973,Margarita Julia,Alvarado Bonilla,u00259973@demo.unab.local,1,4,activo,2025-01-26
+U00297230,Paula,Palacios Lozano,u00297230@demo.unab.local,1,4,activo,2025-01-26
+U00325483,Yolima,Bejarano Garzón,u00325483@demo.unab.local,1,4,activo,2025-01-26
+U00348112,Jennifer Emilce,Hurtado Rincón,u00348112@demo.unab.local,1,4,activo,2025-01-26
+U00349197,Sofía,Mosquera García,u00349197@demo.unab.local,1,4,activo,2025-01-26
+U00385096,Blanca,Bautista Ochoa,u00385096@demo.unab.local,1,4,activo,2025-01-26
+U00451289,Wilder,Salamanca Contreras,u00451289@demo.unab.local,1,4,activo,2025-01-26
+U00456362,Katerine,Méndez Velandia,u00456362@demo.unab.local,1,4,activo,2025-01-26
+U00485077,Janneth María,Moreno Osorio,u00485077@demo.unab.local,1,4,activo,2025-01-26
+U00552189,Edison Luis,Rojas Prieto,u00552189@demo.unab.local,1,4,activo,2025-01-26
+U00653963,Yulieth Clara,Hernández Buitrago,u00653963@demo.unab.local,1,4,activo,2025-01-26
+U00681276,Adrián,Morales Bernal,u00681276@demo.unab.local,1,4,activo,2025-01-26
+U00752272,Mónica,Bonilla Díaz,u00752272@demo.unab.local,1,4,activo,2025-01-26
+U00863395,Angie Dayana,Sánchez Sánchez,u00863395@demo.unab.local,1,4,activo,2025-01-26
+U00874768,Fanny Pilar,Córdoba Meneses,u00874768@demo.unab.local,1,4,activo,2025-01-26
+U00935665,Milton,Castro Suárez,u00935665@demo.unab.local,1,4,activo,2025-01-26
+U00154977,Steven,Hernández Corredor,u00154977@demo.unab.local,1,3,activo,2025-08-03
+U00157288,Erika,Hernández Pérez,u00157288@demo.unab.local,1,3,activo,2025-08-03
+U00193420,Erika,Espinosa Duarte,u00193420@demo.unab.local,1,3,activo,2025-08-03
+U00234119,Camilo,Trujillo Barreto,u00234119@demo.unab.local,1,3,activo,2025-08-03
+U00453254,Oliva,Suárez Molina,u00453254@demo.unab.local,1,3,activo,2025-08-03
+U00453972,Ariel,López Duarte,u00453972@demo.unab.local,1,3,activo,2025-08-03
+U00526811,Adriana,Maldonado Sánchez,u00526811@demo.unab.local,1,3,activo,2025-08-03
+U00527712,Johana Leidy,Martínez Romero,u00527712@demo.unab.local,1,3,activo,2025-08-03
+U00532040,Elkin,Benavides Ayala,u00532040@demo.unab.local,1,3,activo,2025-08-03
+U00549045,Claudia María,Mora Salas,u00549045@demo.unab.local,1,3,activo,2025-08-03
+U00778605,María,Vergara Ramírez,u00778605@demo.unab.local,1,3,activo,2025-08-03
+U00781390,Marco Antonio,Durán Zapata,u00781390@demo.unab.local,1,3,activo,2025-08-03
+U00789055,Eduardo,Lozano Polo,u00789055@demo.unab.local,1,3,activo,2025-08-03
+U00957125,Consuelo Ángela,Morales Rojas,u00957125@demo.unab.local,1,3,activo,2025-08-03
+U00967795,Lucía,Daza Betancur,u00967795@demo.unab.local,1,3,activo,2025-08-03
+U00239701,Blanca,Ramos Cuéllar,u00239701@demo.unab.local,1,2,activo,2026-01-26
+U00300482,Alberto Juan,Tovar Mosquera,u00300482@demo.unab.local,1,2,activo,2026-01-26
+U00302778,Pedro,Pacheco González,u00302778@demo.unab.local,1,2,activo,2026-01-26
+U00325569,Alberto,Mejía Maldonado,u00325569@demo.unab.local,1,2,activo,2026-01-26
+U00426449,Joel Alejandro,Vásquez Sánchez,u00426449@demo.unab.local,1,2,activo,2026-01-26
+U00452699,Marlon Víctor,Ortiz Mena,u00452699@demo.unab.local,1,2,activo,2026-01-26
+U00480529,Alejandra Leidy,Cruz Castro,u00480529@demo.unab.local,1,2,activo,2026-01-26
+U00544987,Javier Jonatan,González Sánchez,u00544987@demo.unab.local,1,2,activo,2026-01-26
+U00702207,Martha Gloria,Rivera Barrera,u00702207@demo.unab.local,1,2,activo,2026-01-26
+U00785550,José Gustavo,Londoño Tovar,u00785550@demo.unab.local,1,2,activo,2026-01-26
+U00907286,Marlén María,Correa Vásquez,u00907286@demo.unab.local,1,2,activo,2026-01-26
+U00958047,Ernesto Steven,Monroy Aguilar,u00958047@demo.unab.local,1,2,activo,2026-01-26
+U00100004,Milena María,Gómez Silva,u00100004@demo.unab.local,1,1,activo,2026-08-03
+U00259000,Daniel,González Vera,u00259000@demo.unab.local,1,1,activo,2026-08-03
+U00266933,Raúl,Olaya Ávila,u00266933@demo.unab.local,1,1,activo,2026-08-03
+U00716209,Ángel,Sánchez Ruiz,u00716209@demo.unab.local,1,1,activo,2026-08-03
+U00833260,José,Giraldo Pérez,u00833260@demo.unab.local,1,1,activo,2026-08-03
+U00836903,Ramiro,Rodríguez Gómez,u00836903@demo.unab.local,1,1,activo,2026-08-03
+U00910027,Alcides,Gallego Guzmán,u00910027@demo.unab.local,1,1,activo,2026-08-03
+U00999161,Victoria Elisa,Quintero Sánchez,u00999161@demo.unab.local,1,1,activo,2026-08-03
